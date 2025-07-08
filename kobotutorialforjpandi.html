@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial: Building a Broiler Farmer Survey in KoboToolbox Web Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+        }
+        .key-term {
+            color: #008080; /* Teal */
+        }
+        .tip-box {
+            background-color: #f5f5f5; /* Light gray */
+            border: 2px solid #2563eb; /* Blue border */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-blue-800 text-white text-center py-12">
+        <h1 class="text-4xl font-bold">Tutorial: Building a Broiler Farmer Survey in KoboToolbox Web Interface</h1>
+        <p class="text-xl italic mt-2">A Comprehensive Step-by-Step Guide with Practical Examples and Advanced Features</p>
+        <p class="mt-4 text-lg">Prepared by: <span class="font-bold">Shaun Narimbi</span></p>
+        <p class="text-sm">Date: July 9, 2025</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto p-6 space-y-8">
+        <!-- Section 1: Introduction -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">1. Introduction to the Tutorial</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">What is KoboToolbox?</h3>
+                    <p><span class="key-term font-bold">KoboToolbox</span> is a <span class="key-term">free, open-source platform</span> designed for <span class="key-term font-bold">data collection</span> in challenging environments, such as <span class="key-term font-bold">agricultural research</span>, <span class="key-term font-bold">humanitarian aid</span>, and <span class="key-term font-bold">public health</span>. It supports <span class="key-term">digital surveys</span> deployable via mobile devices or web browsers, with <span class="key-term font-bold">offline capabilities</span> and <span class="key-term font-bold">multilingual support</span>. This tutorial uses the <span class="key-term">web interface</span>, a <span class="key-term font-bold">visual form builder</span> ideal for all skill levels.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Purpose of the Tutorial</h3>
+                    <p>This tutorial guides you through creating a <span class="key-term font-bold">broiler farmer survey</span> based on the <em>Broiler Farmer Questionnaire</em>. You’ll learn to:</p>
+                    <ul class="list-disc pl-6">
+                        <li>Set up a <span class="key-term font-bold">project</span> and <span class="key-term font-bold">form</span>.</li>
+                        <li>Add <span class="key-term font-bold">question types</span> (e.g., text, integer, select one/multiple).</li>
+                        <li>Organize questions into <span class="key-term font-bold">groups</span>.</li>
+                        <li>Apply <span class="key-term font-bold">skip logic</span>, <span class="key-term font-bold">constraints</span>, and <span class="key-term font-bold">calculations</span>.</li>
+                        <li><span class="key-term font-bold">Preview</span>, <span class="key-term font-bold">test</span>, and <span class="key-term font-bold">deploy</span> the survey.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Prerequisites</h3>
+                    <ul class="list-disc pl-6">
+                        <li>A <span class="key-term font-bold">KoboToolbox account</span> (<a href="https://kobotoolbox.org" class="text-blue-600 underline">kobotoolbox.org</a>).</li>
+                        <li>Basic familiarity with <span class="key-term font-bold">survey design</span> concepts.</li>
+                    </ul>
+                </div>
+                <div class="tip-box">
+                    <p><span class="font-bold text-blue-600">Context:</span> The survey collects data on <em>demographics</em>, <em>general background</em>, <em>feeding practices</em>, <em>economic outcomes</em>, and <em>challenges</em> for broiler farmers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Setting Up Your Project -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">2. Setting Up Your Project</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Creating a New Project</h3>
+                    <ol class="list-decimal pl-6">
+                        <li><span class="font-bold">Log In:</span> Navigate to <a href="https://kobotoolbox.org" class="text-blue-600 underline">kobotoolbox.org</a> and sign in.</li>
+                        <li><span class="font-bold">Start a Project:</span> Click <span class="key-term font-bold">+ New Project</span> on the dashboard.</li>
+                        <li><span class="font-bold">Name It:</span> Enter <em>Broiler Farmer Survey</em>.</li>
+                        <li><span class="font-bold">Create:</span> Click <span class="key-term font-bold">Create Project</span>.</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Opening the Form Builder</h3>
+                    <ol class="list-decimal pl-6">
+                        <li>Inside the project, select <span class="key-term font-bold">Build from scratch</span> to open the web interface.</li>
+                        <li>Understand the layout:
+                            <ul class="list-disc pl-6">
+                                <li><span class="key-term font-bold">Sidebar (left):</span> Add questions or groups.</li>
+                                <li><span class="key-term font-bold">Main Area:</span> View and edit the form.</li>
+                                <li><span class="key-term font-bold">Settings Panel (right):</span> Configure question properties (e.g., required, skip logic).</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="tip-box">
+                    <p><span class="font-bold text-blue-600">Tip:</span> Save your work frequently using the save icon to prevent data loss.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Understanding Question Types -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">3. Understanding Question Types</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Overview</h3>
+                    <p>Each question has a <span class="key-term">type</span> defining its <span class="key-term font-bold">data format</span> and <span class="key-term font-bold">user interaction</span>. Correct selection ensures <span class="key-term font-bold">analyzable data</span>.</p>
+                    <ul class="list-disc pl-6">
+                        <li><span class="key-term font-bold">Text:</span> <span class="key-term">Open-ended</span> (e.g., <em>Name</em>).</li>
+                        <li><span class="key-term font-bold">Integer:</span> <span class="key-term">Whole numbers</span> (e.g., <em>Number of broilers</em>).</li>
+                        <li><span class="key-term font-bold">Decimal:</span> <span class="key-term">Numbers with decimals</span> (e.g., <em>Feed cost in PGK</em>).</li>
+                        <li><span class="key-term font-bold">Select One:</span> <span class="key-term">Single-choice</span> (e.g., <em>Gender: Male/Female</em>).</li>
+                        <li><span class="key-term font-bold">Select Multiple:</span> <span class="key-term">Multiple-choice</span> (e.g., <em>Farming motivations</em>).</li>
+                        <li><span class="key-term font-bold">Date:</span> <span class="key-term">Calendar input</span> (e.g., <em>Chick purchase date</em>).</li>
+                        <li><span class="key-term font-bold">Time:</span> <span class="key-term">Time input</span> (e.g., <em>Feeding time</em>).</li>
+                        <li><span class="key-term font-bold">Date and Time:</span> <span class="key-term">Combined input</span> (e.g., <em>Survey timestamp</em>).</li>
+                        <li><span class="key-term font-bold">Note:</span> <span class="key-term">Non-data text</span> for instructions.</li>
+                        <li><span class="key-term font-bold">Calculate:</span> <span class="key-term">Computes values</span> (e.g., <em>Profit</em>).</li>
+                        <li><span class="key-term font-bold">Image/Audio/Video:</span> <span class="key-term">Multimedia</span> (e.g., <em>Farm photo</em>).</li>
+                        <li><span class="key-term font-bold">Geopoint:</span> <span class="key-term">GPS coordinates</span> (e.g., <em>Farm location</em>).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Choosing the Right Type</h3>
+                    <ul class="list-disc pl-6">
+                        <li>Use <code>select_one</code> for <span class="key-term font-bold">mutually exclusive</span> options.</li>
+                        <li>Use <code>integer</code>/<code>decimal</code> for <span class="key-term font-bold">numerical analysis</span>.</li>
+                        <li>Use <code>text</code> for <span class="key-term font-bold">qualitative</span> data.</li>
+                        <li>Use <code>geopoint</code> for <span class="key-term font-bold">spatial</span> agricultural data.</li>
+                    </ul>
+                </div>
+                <div class="tip-box">
+                    <p><span class="font-bold text-blue-600">Examples:</span></p>
+                    <ul class="list-disc pl-6">
+                        <li><span class="font-bold">Question:</span> <em>How many broilers are you raising?</em> Type: <code>integer</code> (<span class="font-bold">Reason:</span> Whole number).</li>
+                        <li><span class="font-bold">Question:</span> <em>Average selling price per broiler (PGK)?</em> Type: <code>decimal</code> (<span class="font-bold">Reason:</span> Monetary value, e.g., 5.75 PGK).</li>
+                        <li><span class="font-bold">Question:</span> <em>Diseases affecting your flock?</em> Type: <code>select_multiple</code>, Choices: <em>Newcastle, Coccidiosis, Influenza, Other</em>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Adding Questions to the Survey -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">4. Adding Questions to the Survey</h2>
+            <p>We’ll build key sections from the <em>Broiler Farmer Questionnaire</em>, including <span class="key-term font-bold">Demographics</span>, <span class="key-term font-bold">General Background</span>, <span class="key-term font-bold">Feeding Practices</span>, and <span class="key-term font-bold">Farm Economics</span>.</p>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Demographics Section</h3>
+                    <ol class="list-decimal pl-6">
+                        <li><span class="font-bold">Create Group:</span>
+                            <ul class="list-disc pl-6">
+                                <li>Click <span class="key-term font-bold">+ Add Group</span>.</li>
+                                <li><span class="font-bold">Name:</span> <code>demographics</code>, <span class="font-bold">Label:</span> <em>Demographics</em>.</li>
+                            </ul>
+                        </li>
+                        <li><span class="font-bold">Add Questions:</span>
+                            <ul class="list-disc pl-6">
+                                <li><span class="font-bold">Name:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>text</code></li>
+                                        <li>Label: <em>What is your name?</em></li>
+                                        <li>Variable Name: <code>name</code></li>
+                                        <li>Hint: <em>Enter full name of respondent</em></li>
+                                        <li>Settings: Check <span class="key-term font-bold">Required</span>.</li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Age:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>integer</code></li>
+                                        <li>Label: <em>How old are you?</em></li>
+                                        <li>Variable Name: <code>age</code></li>
+                                        <li>Hint: <em>Enter age in years</em></li>
+                                        <li>Constraint: <code>${age} >= 15 and ${age} <= 100</code></li>
+                                        <li>Settings: Check <span class="key-term font-bold">Required</span>.</li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Gender:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>select_one gender</code></li>
+                                        <li>Label: <em>What is your gender?</em></li>
+                                        <li>Variable Name: <code>gender</code></li>
+                                        <li>Choices: <em>male, female</em></li>
+                                        <li>Settings: Check <span class="key-term font-bold">Required</span>.</li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Marital Status:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>select_one marital_status</code></li>
+                                        <li>Label: <em>What is your marital status?</em></li>
+                                        <li>Variable Name: <code>marital_status</code></li>
+                                        <li>Choices: <em>Married, Single, Divorced, Defacto, Rather not say</em></li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Occupation:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>select_one occupation</code></li>
+                                        <li>Label: <em>What is your main occupation?</em></li>
+                                        <li>Variable Name: <code>occupation</code></li>
+                                        <li>Choices: <em>Paid Employment, Home Carer, Chicken Farmer, Other</em></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">General Background Section</h3>
+                    <ol class="list-decimal pl-6">
+                        <li><span class="font-bold">Create Group:</span>
+                            <ul class="list-disc pl-6">
+                                <li><span class="font-bold">Name:</span> <code>general_background</code>, <span class="font-bold">Label:</span> <em>Section 1: General Background</em>.</li>
+                            </ul>
+                        </li>
+                        <li><span class="font-bold">Add Questions:</span>
+                            <ul class="list-disc pl-6">
+                                <li><span class="font-bold">Farm Location:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>geopoint</code></li>
+                                        <li>Label: <em>Where is your farm located?</em></li>
+                                        <li>Variable Name: <code>farm_location</code></li>
+                                        <li>Hint: <em>Record GPS coordinates of the farm</em></li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Years Raising:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>integer</code></li>
+                                        <li>Label: <em>How long have you been raising broiler chickens?</em></li>
+                                        <li>Variable Name: <code>years_raising</code></li>
+                                        <li>Hint: <em>Enter number of years</em></li>
+                                        <li>Constraint: <code>${years_raising} >= 0</code></li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Motivation:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>select_multiple motivation</code></li>
+                                        <li>Label: <em>Why did you choose broiler farming?</em></li>
+                                        <li>Variable Name: <code>farming_motivation</code></li>
+                                        <li>Choices: <em>Cash (Income), For special needs, Low risk, Low capital investment, Quick turnover</em></li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Training Received:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>select_one yes_no</code></li>
+                                        <li>Label: <em>Have you undergone training before raising chickens?</em></li>
+                                        <li>Variable Name: <code>training_received</code></li>
+                                        <li>Choices: <em>Yes, No</em></li>
+                                        <li>Settings: Check <span class="key-term font-bold">Required</span>.</li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Training Details:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>text</code></li>
+                                        <li>Label: <em>If yes, when and by whom?</em></li>
+                                        <li>Variable Name: <code>training_details</code></li>
+                                        <li>Skip Logic: <code>selected(${training_received}, 'Yes')</code></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Feeding Practices Section</h3>
+                    <ol class="list-decimal pl-6">
+                        <li><span class="font-bold">Create Group:</span>
+                            <ul class="list-disc pl-6">
+                                <li><span class="font-bold">Name:</span> <code>feeding_practices</code>, <span class="font-bold">Label:</span> <em>Section 3: Feeding Practices</em>.</li>
+                            </ul>
+                        </li>
+                        <li><span class="font-bold">Add Questions:</span>
+                            <ul class="list-disc pl-6">
+                                <li><span class="font-bold">Primary Feed:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>select_one feed_type</code></li>
+                                        <li>Label: <em>What type of feed do you primarily use?</em></li>
+                                        <li>Variable Name: <code>primary_feed</code></li>
+                                        <li>Choices: <em>Commercial, Homemade, Mix</em></li>
+                                        <li>Settings: Check <span class="key-term font-bold">Required</span>.</li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Feed Brand:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>text</code></li>
+                                        <li>Label: <em>What brand of feed(s) do you use?</em></li>
+                                        <li>Variable Name: <code>feed_brand</code></li>
+                                        <li>Skip Logic: <code>${primary_feed} = 'Commercial' or ${primary_feed} = 'Mix'</code></li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Feed Cost:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>decimal</code></li>
+                                        <li>Label: <em>How much does this feed cost per bag (PGK)?</em></li>
+                                        <li>Variable Name: <code>feed_cost</code></li>
+                                        <li>Constraint: <code>${feed_cost} > 0</code></li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Starter Feed:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>select_one starter_feed_type</code></li>
+                                        <li>Label: <em>Do you use broiler starter crumbles?</em></li>
+                                        <li>Variable Name: <code>starter_used</code></li>
+                                        <li>Choices: <em>Yes, No, Own mix</em></li>
+                                    </ul>
+                                </li>
+                                <li><span class="font-bold">Starter Duration:</span>
+                                    <ul class="list-circle pl-6">
+                                        <li>Type: <code>select_one starter_duration</code></li>
+                                        <li>Label: <em>How long do you feed starter crumbles to chicks?</em></li>
+                                        <li>Variable Name: <code>starter_duration</code></li>
+                                        <li>Choices: <em>0–14 days, 0–21 days, 0–28 days, 0–42+ days</em></li>
+                                        <li>Skip Logic: <code>selected(${starter_used}, 'Yes')</code></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="tip-box">
+                    <p><span class="font-bold text-blue-600">Tip:</span> Use the <em>Hint</em> field to provide guidance (e.g., <em>Record GPS coordinates of the farm</em>). Drag questions to reorder for logical flow.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Using Advanced Features -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">5. Using Advanced Features</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Repeat Groups</h3>
+                    <p>For <span class="key-term font-bold">repeated data</span> (e.g., details per broiler batch), use <span class="key-term">repeat groups</span>.</p>
+                    <ol class="list-decimal pl-6">
+                        <li>Create a group: <code>batch_details</code>, Label: <em>Broiler Batch Details</em>.</li>
+                        <li>In settings, check <span class="key-term font-bold">Repeat this group</span>.</li>
+                        <li>Add questions:
+                            <ul class="list-disc pl-6">
+                                <li><code>batch_size</code>: <em>Number of chicks in batch?</em> (<code>integer</code>, Constraint: <code>${batch_size} > 0</code>).</li>
+                                <li><code>start_date</code>: <em>Batch start date?</em> (<code>date</code>).</li>
+                                <li><code>end_date</code>: <em>Batch end date?</em> (<code>date</code>).</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Calculations</h3>
+                    <p>Use <code>calculate</code> for <span class="key-term font-bold">real-time metrics</span>.</p>
+                    <ol class="list-decimal pl-6">
+                        <li>Add a question:
+                            <ul class="list-disc pl-6">
+                                <li>Type: <code>calculate</code></li>
+                                <li>Label: <em>Profit calculation</em></li>
+                                <li>Variable Name: <code>profit_calc</code></li>
+                                <li>Expression: <code>${sell_price} * ${broilers_sold} - ${feed_cost}</code></li>
+                            </ul>
+                        </li>
+                        <li>Display result:
+                            <ul class="list-disc pl-6">
+                                <li>Type: <code>note</code></li>
+                                <li>Label: <em>Your profit is ${profit_calc} PGK.</em></li>
+                                <li>Variable Name: <code>profit_display</code></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="tip-box">
+                    <p><span class="font-bold text-blue-600">Example Calculation:</span> If <code>sell_price</code> = 10 PGK, <code>broilers_sold</code> = 100, and <code>feed_cost</code> = 500 PGK, then <code>profit_calc</code> = 10 * 100 - 500 = 500 PGK.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Applying Skip Logic and Constraints -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">6. Applying Skip Logic and Constraints</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Skip Logic</h3>
+                    <ol class="list-decimal pl-6">
+                        <li><span class="font-bold">Example: Broiler Status</span>
+                            <ul class="list-disc pl-6">
+                                <li>Question: <code>currently_raising</code> (<em>Are you currently raising broilers?</em>, <code>select_one yes_no</code>, Choices: <em>Yes, No</em>).</li>
+                                <li>Question: <code>why_stopped</code> (<em>Why did you stop broiler farming?</em>, <code>select_multiple stop_reason</code>, Choices: <em>No access to feed, High prices of feed, No access to markets, Other</em>).</li>
+                                <li>Skip Logic: <code>selected(${currently_raising}, 'No')</code>.</li>
+                            </ul>
+                        </li>
+                        <li>In the form builder:
+                            <ul class="list-disc pl-6">
+                                <li>Select <code>why_stopped</code>, click the gear icon, go to <span class="key-term font-bold">Skip Logic</span>.</li>
+                                <li>Add condition: <code>selected(${currently_raising}, 'No')</code>.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Constraints</h3>
+                    <ul class="list-disc pl-6">
+                        <li>Example: For <code>feed_cost</code>, set <code>${feed_cost} > 0</code> to prevent negative values.</li>
+                        <li>Apply via the <span class="key-term font-bold">Constraints</span> field in question settings.</li>
+                    </ul>
+                </div>
+                <div class="tip-box">
+                    <p><span class="font-bold text-blue-600">Example Skip Logic:</span> If a farmer selects <code>currently_raising</code> = 'No', the <code>why_stopped</code> question appears, allowing them to specify reasons like <em>High prices of feed</em>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Building the Farm Economics Section -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">7. Building the Farm Economics Section</h2>
+            <ol class="list-decimal pl-6">
+                <li><span class="font-bold">Create Group:</span>
+                    <ul class="list-disc pl-6">
+                        <li><span class="font-bold">Name:</span> <code>farm_economics</code>, <span class="font-bold">Label:</span> <em>Section 5: Farm Economics</em>.</li>
+                    </ul>
+                </li>
+                <li><span class="font-bold">Add Questions:</span>
+                    <ul class="list-disc pl-6">
+                        <li><code>income_source</code>: <em>What is your main income source?</em> (<code>select_one income_source</code>, Choices: <em>Broilers, Crops, Other</em>, <span class="key-term font-bold">Required</span>).</li>
+                        <li><code>broiler_income</code>: <em>Annual income from broilers (PGK)?</em> (<code>decimal</code>, Constraint: <code>${broiler_income} >= 0</code>).</li>
+                        <li><code>feed_cost</code>: <em>Annual feed cost (PGK)?</em> (<code>decimal</code>, Constraint: <code>${feed_cost} >= 0</code>).</li>
+                        <li><code>profit_calc</code>: Calculate profit (<code>calculate</code>, Expression: <code>${broiler_income} - ${feed_cost}</code>).</li>
+                        <li><code>profit_display</code>: <em>Your annual profit is ${profit_calc} PGK</em> (<code>note</code>).</li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="tip-box">
+                <p><span class="font-bold text-blue-600">Example:</span> If <code>broiler_income</code> = 1000 PGK and <code>feed_cost</code> = 600 PGK, <code>profit_calc</code> displays 400 PGK.</p>
+            </div>
+        </section>
+
+        <!-- Section 8: Previewing and Testing -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">8. Previewing and Testing</h2>
+            <ol class="list-decimal pl-6">
+                <li><span class="font-bold">Preview Form:</span>
+                    <ul class="list-disc pl-6">
+                        <li>Click <span class="key-term font-bold">Preview</span> in the form builder.</li>
+                        <li>Test questions, skip logic (e.g., <code>why_stopped</code> appears only if <code>currently_raising</code> = 'No'), and constraints.</li>
+                    </ul>
+                </li>
+                <li><span class="font-bold">Fix Issues:</span>
+                    <ul class="list-disc pl-6">
+                        <li>Check for typos, incorrect logic, or missing choices.</li>
+                        <li>Reorder questions for logical flow.</li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="tip-box">
+                <p><span class="font-bold text-blue-600">Tip:</span> Test with sample responses to ensure calculations (e.g., <code>profit_calc</code>) and skip logic function correctly.</p>
+            </div>
+        </section>
+
+        <!-- Section 9: Deploying the Survey -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">9. Deploying the Survey</h2>
+            <ol class="list-decimal pl-6">
+                <li><span class="font-bold">Finalize:</span> Click <span class="key-term font-bold">Deploy</span> to activate the form.</li>
+                <li><span class="font-bold">Share:</span> Copy the form link for online collection or download for offline use.</li>
+                <li><span class="font-bold">Test Deployment:</span> Submit test responses to verify data collection.</li>
+            </ol>
+            <div class="tip-box">
+                <p><span class="font-bold text-blue-600">Tip:</span> Verify offline functionality if collecting data in areas with limited internet.</p>
+            </div>
+        </section>
+
+        <!-- Section 10: Best Practices for Survey Design -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">10. Best Practices for Survey Design</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Design Principles</h3>
+                    <ul class="list-disc pl-6">
+                        <li>Use <span class="key-term font-bold">simple, direct language</span> (e.g., <em>How many broilers?</em>).</li>
+                        <li><span class="key-term font-bold">Group logically</span> (e.g., demographics before economics).</li>
+                        <li>Minimize <span class="key-term font-bold">required fields</span> to maintain <span class="key-term">respondent goodwill</span>.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Advanced Tips</h3>
+                    <ul class="list-disc pl-6">
+                        <li>Use <code>calculate</code> for metrics (e.g., cost per broiler: <code>${feed_cost} / ${broiler_count}</code>).</li>
+                        <li>Add <code>note</code> for context (e.g., <em>Next, we’ll ask about feed practices</em>).</li>
+                        <li>Test <span class="key-term font-bold">multilingual labels</span> (e.g., English/Tok Pisin for Papua New Guinea).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Pitfalls to Avoid</h3>
+                    <ul class="list-disc pl-6">
+                        <li><span class="key-term font-bold">Inconsistent variable names</span> (e.g., <code>feedcost</code> vs. <code>feed_cost</code>).</li>
+                        <li><span class="key-term font-bold">Complex skip logic</span> confusing respondents.</li>
+                        <li><span class="key-term font-bold">Deploying without preview</span>.</li>
+                    </ul>
+                </div>
+                <div class="tip-box">
+                    <p><span class="font-bold text-blue-600">Example Pitfall:</span> Using <code>feed_cost</code> in one question and <code>feedcost</code> in a calculation will break the <code>profit_calc</code> expression. Always use consistent variable names.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Hands-On Activity -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">11. Hands-On Activity</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Objective</h3>
+                    <p>Build the <span class="key-term font-bold">Feeding Practices</span> and <span class="key-term font-bold">Farm Economics</span> sections, incorporating skip logic, constraints, and calculations.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-500">Instructions</h3>
+                    <ol class="list-decimal pl-6">
+                        <li>Follow Sections 4.3 and 7 to build the groups.</li>
+                        <li>Add a <code>calculate</code> question:
+                            <ul class="list-disc pl-6">
+                                <li><code>feed_per_broiler</code>: <em>Cost per broiler (PGK)</em> (<code>calculate</code>, Expression: <code>${feed_cost} / ${broiler_count}</code>).</li>
+                            </ul>
+                        </li>
+                        <li>Test skip logic for <code>feed_brand</code> and <code>starter_duration</code>.</li>
+                        <li>Preview and verify calculations.</li>
+                    </ol>
+                </div>
+                <div class="tip-box">
+                    <p><span class="font-bold text-blue-600">Activity Goal:</span> Create functional survey sections with accurate logic and calculations, ready for deployment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: Resources for Further Learning -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">12. Resources for Further Learning</h2>
+            <ul class="list-disc pl-6">
+                <li><span class="key-term font-bold">KoboToolbox Website:</span> <a href="https://kobotoolbox.org" class="text-blue-600 underline">kobotoolbox.org</a></li>
+                <li><span class="key-term font-bold">Support Portal:</span> <a href="https://support.kobotoolbox.org" class="text-blue-600 underline">support.kobotoolbox.org</a></li>
+                <li><span class="key-term font-bold">Community Forum:</span> <a href="https://community.kobotoolbox.org" class="text-blue-600 underline">community.kobotoolbox.org</a></li>
+            </ul>
+        </section>
+
+        <!-- Section 13: Conclusion -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">13. Conclusion</h2>
+            <p>This tutorial provides a <span class="key-term font-bold">comprehensive guide</span> to building a <span class="key-term">broiler farmer survey</span> in KoboToolbox’s <span class="key-term font-bold">web interface</span>. With <span class="key-term font-bold">detailed steps</span>, <span class="key-term font-bold">advanced features</span>, and <span class="key-term font-bold">practical examples</span>, you can create a <span class="key-term font-bold">robust survey</span> for agricultural data collection.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white text-center py-4">
+        <p>&copy; 2025 Shaun Narimbi. All rights reserved.</p>
+    </footer>
+</body>
+</html>
