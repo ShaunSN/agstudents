@@ -20,26 +20,28 @@
         <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
             <h2 class="text-3xl font-semibold text-blue-600 mb-4">1. Introduction to the Tutorial</h2>
             <h3 class="text-xl font-medium text-teal-500 mb-2">What is KoboToolbox?</h3>
-            <p class="mb-4">KoboToolbox is a free, open-source platform designed for data collection in challenging environments, such as agricultural research, humanitarian aid, and public health. It supports digital surveys deployable via mobile devices or web browsers, with offline capabilities and multilingual support. This tutorial uses the web interface, a visual form builder ideal for all skill levels.</p>
+            <p class="mb-4">KoboToolbox is a free, open-source platform designed for data collection in challenging environments, such as agricultural research, humanitarian aid, and public health. It supports digital surveys deployable via mobile devices or web browsers, with offline capabilities and multilingual support. This tutorial focuses on the web interface, a user-friendly form builder suitable for beginners and advanced users alike.</p>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">Purpose of the Tutorial</h3>
-            <p class="mb-4">This tutorial guides you through creating a broiler farmer survey based on the Broiler Farmer Questionnaire. You’ll learn to:</p>
+            <p class="mb-4">This tutorial guides you through creating a comprehensive broiler farmer survey based on the Broiler Farmer Questionnaire. By the end, you’ll be able to:</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>Set up a project and form.</li>
-                <li>Add question types (e.g., text, integer, select one/multiple).</li>
-                <li>Organize questions into groups.</li>
-                <li>Apply skip logic, constraints, and calculations.</li>
-                <li>Preview, test, and deploy the survey.</li>
+                <li>Set up a project and form in KoboToolbox.</li>
+                <li>Add various question types (e.g., text, integer, select_one, select_multiple).</li>
+                <li>Organize questions into logical groups for better survey flow.</li>
+                <li>Implement skip logic, constraints, and calculations for dynamic surveys.</li>
+                <li>Preview, test, and deploy the survey for data collection.</li>
             </ul>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">Prerequisites</h3>
+            <p class="mb-4">To follow this tutorial, you need:</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>A KoboToolbox account (<a href="http://kobotoolbox.org" class="text-blue-500 hover:underline">kobotoolbox.org</a>).</li>
-                <li>Basic familiarity with survey design concepts.</li>
+                <li>A KoboToolbox account (sign up at <a href="http://kobotoolbox.org" class="text-blue-500 hover:underline">kobotoolbox.org</a>).</li>
+                <li>Basic understanding of survey design concepts (e.g., question types, skip logic).</li>
+                <li>Access to a web browser for the KoboToolbox web interface.</li>
             </ul>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">Context</h3>
-            <p class="mb-4">The survey collects data on demographics, general background, feeding practices, economic outcomes, and challenges for broiler farmers.</p>
+            <p class="mb-4">The survey collects data on broiler farmers’ demographics, general background, chicken rearing practices, feeding strategies, nutritional knowledge, economic considerations, challenges, performance outcomes, and future improvement suggestions. This data is critical for agricultural research and support programs.</p>
         </section>
 
         <hr class="border-gray-300 mb-8">
@@ -47,26 +49,33 @@
         <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
             <h2 class="text-3xl font-semibold text-blue-600 mb-4">2. Setting Up Your Project</h2>
             <h3 class="text-xl font-medium text-teal-500 mb-2">Creating a New Project</h3>
+            <p class="mb-4">Start by setting up a project in KoboToolbox to house your survey form.</p>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
             <ol class="list-decimal list-inside mb-4 space-y-2">
-                <li><strong>Log In:</strong> Navigate to <a href="http://kobotoolbox.org" class="text-blue-500 hover:underline">kobotoolbox.org</a> and sign in.</li>
-                <li><strong>Start a Project:</strong> Click <em class="font-medium">+ New Project</em> on the dashboard.</li>
-                <li><strong>Name It:</strong> Enter <em class="font-medium">Broiler Farmer Survey</em>.</li>
-                <li><strong>Create:</strong> Click <em class="font-medium">Create Project</em>.</li>
+                <li><strong>Log In</strong>: Go to <a href="http://kobotoolbox.org" class="text-blue-500 hover:underline">kobotoolbox.org</a> and sign in with your credentials.</li>
+                <li><strong>Start a Project</strong>: On the dashboard, locate the <em class="font-medium">+ New Project</em> button and click it.</li>
+                <li><strong>Name the Project</strong>: Enter <em class="font-medium">Broiler Farmer Survey</em> as the project name to clearly identify it.</li>
+                <li><strong>Create Project</strong>: Click <em class="font-medium">Create Project</em> to initialize the project. You’ll be taken to the project dashboard.</li>
+                <li><strong>Verify</strong>: Ensure the project appears in your dashboard with the correct name.</li>
             </ol>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">Opening the Form Builder</h3>
+            <p class="mb-4">The form builder is where you’ll design the survey. It’s a visual interface with tools to add questions, groups, and configure settings.</p>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
             <ol class="list-decimal list-inside mb-4 space-y-2">
-                <li>Inside the project, select <em class="font-medium">Build from scratch</em> to open the web interface.</li>
-                <li>Understand the layout:
+                <li><strong>Create a Form</strong>: In the project dashboard, select <em class="font-medium">Build from scratch</em> to open the web-based form builder.</li>
+                <li><strong>Understand the Interface</strong>:
                     <ul class="list-disc list-inside ml-6 space-y-2">
-                        <li><strong>Sidebar (left):</strong> Add questions or groups.</li>
-                        <li><strong>Main Area:</strong> View and edit the form.</li>
-                        <li><strong>Settings Panel (right):</strong> Configure question properties (e.g., required, skip logic).</li>
+                        <li><strong>Sidebar (Left)</strong>: Contains options to add questions, groups, or import XLSForms.</li>
+                        <li><strong>Main Area (Center)</strong>: Displays the form structure, where you can view and edit questions.</li>
+                        <li><strong>Settings Panel (Right)</strong>: Allows configuration of question properties, such as required fields, skip logic, and constraints.</li>
                     </ul>
                 </li>
+                <li><strong>Save Progress</strong>: Click the save icon (floppy disk) in the top toolbar periodically to avoid losing changes.</li>
+                <li><strong>Test Navigation</strong>: Click through the sidebar and main area to familiarize yourself with adding and editing questions.</li>
             </ol>
             <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
-                <p class="text-gray-600"><strong>Tip:</strong> Save your work frequently using the save icon to prevent data loss.</p>
+                <p class="text-gray-600"><strong>Tip:</strong> Save your work frequently using the save icon to prevent data loss, especially during long editing sessions.</p>
             </div>
         </section>
 
@@ -75,31 +84,33 @@
         <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
             <h2 class="text-3xl font-semibold text-blue-600 mb-4">3. Understanding Question Types</h2>
             <h3 class="text-xl font-medium text-teal-500 mb-2">Overview</h3>
-            <p class="μί4">Each question has a type defining its data format and user interaction. Correct selection ensures analyzable data:</p>
+            <p class="mb-4">KoboToolbox offers various question types to capture different data formats. Choosing the correct type ensures data is collected in a format suitable for analysis.</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Text:</strong> Open-ended (e.g., Name).</li>
-                <li><strong>Integer:</strong> Whole numbers (e.g., Age).</li>
-                <li><strong>Decimal:</strong> Numbers with decimals (e.g., Feed cost).</li>
-                <li><strong>Select One:</strong> Single-choice (e.g., Gender: Male/Female).</li>
-                <li><strong>Select Multiple:</strong> Multiple-choice (e.g., Farming motivations).</li>
-                <li><strong>Geopoint:</strong> GPS coordinates (e.g., Farm location).</li>
-                <li><strong>Calculate:</strong> Computes values (e.g., Profit).</li>
-                <li><strong>Note:</strong> Non-data text for instructions.</li>
+                <li><strong>Text</strong>: For open-ended responses (e.g., respondent’s name).</li>
+                <li><strong>Integer</strong>: For whole numbers (e.g., age in years).</li>
+                <li><strong>Decimal</strong>: For numbers with decimals (e.g., feed cost in PGK).</li>
+                <li><strong>Select One</strong>: For single-choice questions (e.g., Gender: Male or Female).</li>
+                <li><strong>Select Multiple</strong>: For multiple-choice questions (e.g., reasons for choosing farming).</li>
+                <li><strong>Geopoint</strong>: For capturing GPS coordinates (e.g., farm location).</li>
+                <li><strong>Calculate</strong>: For computing values based on other inputs (e.g., profit).</li>
+                <li><strong>Note</strong>: For non-data text, such as instructions or context.</li>
             </ul>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">Choosing the Right Type</h3>
+            <p class="mb-4">Select question types based on the data you need:</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>Use <em class="font-medium">select_one</em> for mutually exclusive options.</li>
-                <li>Use <em class="font-medium">integer/decimal</em> for numerical analysis.</li>
-                <li>Use <em class="font-medium">text</em> for qualitative data.</li>
-                <li>Use <em class="font-medium">geopoint</em> for spatial agricultural data.</li>
+                <li>Use <em class="font-medium">select_one</em> for mutually exclusive options to ensure single responses.</li>
+                <li>Use <em class="font-medium">integer</em> or <em class="font-medium">decimal</em> for numerical data suitable for calculations.</li>
+                <li>Use <em class="font-medium">text</em> for qualitative, descriptive responses.</li>
+                <li>Use <em class="font-medium">geopoint</em> for spatial data, critical for agricultural surveys.</li>
             </ul>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">Examples</h3>
+            <p class="mb-4">Here’s how question types apply to the survey:</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Question:</strong> How old are you? <strong>Type:</strong> integer (Reason: Whole number).</li>
-                <li><strong>Question:</strong> Normal market price per live chicken? <strong>Type:</strong> decimal (Reason: Monetary value, e.g., 25.50 PGK).</li>
-                <li><strong>Question:</strong> Why did you choose broiler farming? <strong>Type:</strong> select_multiple, <strong>Choices:</strong> Cash (Income), Low risk, Quick turnover.</li>
+                <li><strong>Question</strong>: How old are you? <strong>Type</strong>: integer (Reason: Age is a whole number, e.g., 45).</li>
+                <li><strong>Question</strong>: Normal market price per live chicken? <strong>Type</strong>: decimal (Reason: Monetary values may include decimals, e.g., 25.50 PGK).</li>
+                <li><strong>Question</strong>: Why did you choose broiler farming? <strong>Type</strong>: select_multiple, <strong>Choices</strong>: Cash (Income), Low risk, Quick turnover (Reason: Allows multiple reasons).</li>
             </ul>
         </section>
 
@@ -107,717 +118,1092 @@
 
         <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
             <h2 class="text-3xl font-semibold text-blue-600 mb-4">4. Adding Questions to the Survey</h2>
-            <p class="mb-4">We’ll build all sections from the Broiler Farmer Questionnaire, including Demographics, General Background, Chicken Background, Feeding Practices, Nutritional Knowledge, and more.</p>
+            <p class="mb-4">This section details how to build the survey’s sections (Demographics, General Background, Chicken Background, Feeding Practices, Nutritional Knowledge, etc.) in KoboToolbox, including question types, skip logic, and constraints.</p>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">4.1 Demographics Section</h3>
-            <p class="mb-2"><strong>Create Group:</strong></p>
+            <p class="mb-2"><strong>Create Group</strong>: Organize demographic questions into a group for clarity.</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>Click <em class="font-medium">+ Add Group</em>.</li>
-                <li><strong>Name:</strong> demographics, <strong>Label:</strong> Demographics.</li>
+                <li><strong>Name</strong>: demographics</li>
+                <li><strong>Label</strong>: Demographics</li>
             </ul>
-            <p class="mb-2"><strong>Add Questions:</strong></p>
+            <p class="mb-2"><strong>Add Questions</strong>: Add the following questions within the group.</p>
             <ul class="list-disc list-inside mb-4 space-y-4">
-                <li><strong>Name:</strong>
+                <li><strong>Name</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> Name</li>
-                        <li><strong>Variable Name:</strong> name</li>
-                        <li><strong>Hint:</strong> Enter full name of respondent</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: Name</li>
+                        <li><strong>Variable Name</strong>: name</li>
+                        <li><strong>Hint</strong>: Enter full name of respondent</li>
                     </ul>
                 </li>
-                <li><strong>Age:</strong>
+                <li><strong>Age</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> integer</li>
-                        <li><strong>Label:</strong> Age</li>
-                        <li><strong>Variable Name:</strong> age</li>
-                        <li><strong>Hint:</strong> Enter age in years</li>
+                        <li><strong>Type</strong>: integer</li>
+                        <li><strong>Label</strong>: Age</li>
+                        <li><strong>Variable Name</strong>: age</li>
+                        <li><strong>Hint</strong>: Enter age in years</li>
                     </ul>
                 </li>
-                <li><strong>Place of Origin:</strong>
+                <li><strong>Place of Origin</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> Place of Origin (Home Province)</li>
-                        <li><strong>Variable Name:</strong> origin</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: Place of Origin (Home Province)</li>
+                        <li><strong>Variable Name</strong>: origin</li>
                     </ul>
                 </li>
-                <li><strong>Address:</strong>
+                <li><strong>Address</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> Current address (Home residence/Location)</li>
-                        <li><strong>Variable Name:</strong> address</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: Current address (Home residence/Location)</li>
+                        <li><strong>Variable Name</strong>: address</li>
                     </ul>
                 </li>
-                <li><strong>Gender:</strong>
+                <li><strong>Gender</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one gender</li>
-                        <li><strong>Label:</strong> Gender</li>
-                        <li><strong>Variable Name:</strong> gender</li>
-                        <li><strong>Choices:</strong> Male, Female</li>
+                        <li><strong>Type</strong>: select_one gender</li>
+                        <li><strong>Label</strong>: Gender</li>
+                        <li><strong>Variable Name</strong>: gender</li>
+                        <li><strong>Choices</strong>: Male, Female</li>
                     </ul>
                 </li>
-                <li><strong>Marital Status:</strong>
+                <li><strong>Marital Status</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one marital_status</li>
-                        <li><strong>Label:</strong> Marital Status</li>
-                        <li><strong>Variable Name:</strong> marital_status</li>
-                        <li><strong>Choices:</strong> Married, Single, Divorced, Defacto, Rather not say</li>
+                        <li><strong>Type</strong>: select_one marital_status</li>
+                        <li><strong>Label</strong>: Marital Status</li>
+                        <li><strong>Variable Name</strong>: marital_status</li>
+                        <li><strong>Choices</strong>: Married, Single, Divorced, Defacto, Rather not say</li>
                     </ul>
                 </li>
-                <li><strong>Occupation:</strong>
+                <li><strong>Occupation</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one occupation</li>
-                        <li><strong>Label:</strong> Main Occupation</li>
-                        <li><strong>Variable Name:</strong> occupation</li>
-                        <li><strong>Choices:</strong> Paid Employment, Home Carer, Chicken Farmer, Other</li>
+                        <li><strong>Type</strong>: select_one occupation</li>
+                        <li><strong>Label</strong>: Main Occupation</li>
+                        <li><strong>Variable Name</strong>: occupation</li>
+                        <li><strong>Choices</strong>: Paid Employment, Home Carer, Chicken Farmer, Other</li>
                     </ul>
                 </li>
-                <li><strong>Currently Raising:</strong>
+                <li><strong>Currently Raising</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one yes_no</li>
-                        <li><strong>Label:</strong> Are you currently raising broilers?</li>
-                        <li><strong>Variable Name:</strong> currently_raising</li>
-                        <li><strong>Choices:</strong> Yes, No</li>
+                        <li><strong>Type</strong>: select_one yes_no</li>
+                        <li><strong>Label</strong>: Are you currently raising broilers?</li>
+                        <li><strong>Variable Name</strong>: currently_raising</li>
+                        <li><strong>Choices</strong>: Yes, No</li>
                     </ul>
                 </li>
-                <li><strong>Stopped Raising:</strong>
+                <li><strong>Stopped Raising</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one yes_no</li>
-                        <li><strong>Label:</strong> Have you raised broilers but stopped?</li>
-                        <li><strong>Variable Name:</strong> stopped_raising</li>
-                        <li><strong>Choices:</strong> Yes, No</li>
+                        <li><strong>Type</strong>: select_one yes_no</li>
+                        <li><strong>Label</strong>: Have you raised broilers but stopped?</li>
+                        <li><strong>Variable Name</strong>: stopped_raising</li>
+                        <li><strong>Choices</strong>: Yes, No</li>
                     </ul>
                 </li>
             </ul>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: In the form builder, click <em class="font-medium">+ Add Group</em> in the sidebar. Set Name to `demographics` and Label to `Demographics`. Save the group.</li>
+                <li><strong>Add Questions</strong>: For each question:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> within the `demographics` group.</li>
+                        <li>Select the appropriate <strong>Type</strong> (e.g., `text` for Name, `integer` for Age, `select_one` for Gender).</li>
+                        <li>Enter the <strong>Label</strong> exactly as listed (e.g., "Name").</li>
+                        <li>Set the <strong>Variable Name</strong> (e.g., `name`, `age`) for data export and reference in logic.</li>
+                        <li>For `select_one` questions, add <strong>Choices</strong> in the Choices tab (e.g., for Gender, add "Male" and "Female").</li>
+                        <li>Add <strong>Hint</strong> where specified (e.g., "Enter full name of respondent" for Name) in the Settings panel.</li>
+                        <li>Optional: Add <strong>Constraint</strong> for Age (e.g., `${age} >= 18` to ensure respondents are adults) in the Constraints field.</li>
+                    </ul>
+                </li>
+                <li><strong>Order Questions</strong>: Drag questions in the main area to match the order: Name, Age, Place of Origin, Address, Gender, Marital Status, Occupation, Currently Raising, Stopped Raising.</li>
+                <li><strong>Test Question Flow</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">Preview</em> (eye icon) in the form builder.</li>
+                        <li>Enter sample responses (e.g., "John Doe" for Name, 35 for Age, "Male" for Gender).</li>
+                        <li>Verify that questions display in order, choices for `select_one` (e.g., Gender, Marital Status) show all options, and text/integer inputs accept valid data.</li>
+                        <li>Check that the group label "Demographics" appears at the top of the section in Preview.</li>
+                        <li>If Age constraint is added, try entering 17; an error should prevent submission.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon to store changes.</li>
+            </ol>
+            <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
+                <p class="text-gray-600"><strong>Tip:</strong> Use consistent variable names (e.g., `name`, not `Name`) to avoid errors in data export or skip logic later. Add hints to clarify inputs for respondents.</p>
+            </div>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">4.2 General Background Section</h3>
-            <p class="mb-2"><strong>Create Group:</strong></p>
+            <p class="mb-2"><strong>Create Group</strong>: Group questions about the farmer’s background and motivations.</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Name:</strong> general_background, <strong>Label:</strong> Section 1: General Background.</li>
+                <li><strong>Name</strong>: general_background</li>
+                <li><strong>Label</strong>: Section 1: General Background</li>
             </ul>
-            <p class="mb-2"><strong>Add Questions:</strong></p>
+            <p class="mb-2"><strong>Add Questions</strong>:</p>
             <ul class="list-disc list-inside mb-4 space-y-4">
-                <li><strong>Farm Location:</strong>
+                <li><strong>Farm Location</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> geopoint</li>
-                        <li><strong>Label:</strong> 1.1. Where are you located (location of farm)?</li>
-                        <li><strong>Variable Name:</strong> farm_location</li>
-                        <li><strong>Hint:</strong> Record GPS coordinates of the farm</li>
+                        <li><strong>Type</strong>: geopoint</li>
+                        <li><strong>Label</strong>: 1.1. Where are you located (location of farm)?</li>
+                        <li><strong>Variable Name</strong>: farm_location</li>
+                        <li><strong>Hint</strong>: Record GPS coordinates of the farm</li>
                     </ul>
                 </li>
-                <li><strong>Years Raising:</strong>
+                <li><strong>Years Raising</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> integer</li>
-                        <li><strong>Label:</strong> 1.2. How long have you been raising broiler chickens?</li>
-                        <li><strong>Variable Name:</strong> years_raising</li>
-                        <li><strong>Hint:</strong> Enter number of years</li>
+                        <li><strong>Type</strong>: integer</li>
+                        <li><strong>Label</strong>: 1.2. How long have you been raising broiler chickens?</li>
+                        <li><strong>Variable Name</strong>: years_raising</li>
+                        <li><strong>Hint</strong>: Enter number of years</li>
                     </ul>
                 </li>
-                <li><strong>Motivation:</strong>
+                <li><strong>Motivation</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_multiple motivation</li>
-                        <li><strong>Label:</strong> 1.3. Why did you choose broiler farming?</li>
-                        <li><strong>Variable Name:</strong> farming_motivation</li>
-                        <li><strong>Choices:</strong> Cash (Income), For special needs, Low risk, Low capital investment, Quick turnover</li>
+                        <li><strong>Type</strong>: select_multiple motivation</li>
+                        <li><strong>Label</strong>: 1.3. Why did you choose broiler farming?</li>
+                        <li><strong>Variable Name</strong>: farming_motivation</li>
+                        <li><strong>Choices</strong>: Cash (Income), For special needs, Low risk, Low capital investment, Quick turnover</li>
                     </ul>
                 </li>
-                <li><strong>Training Received:</strong>
+                <li><strong>Training Received</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one yes_no</li>
-                        <li><strong>Label:</strong> 1.4. Have you undergone training before raising chickens?</li>
-                        <li><strong>Variable Name:</strong> training_received</li>
-                        <li><strong>Choices:</strong> Yes, No</li>
+                        <li><strong>Type</strong>: select_one yes_no</li>
+                        <li><strong>Label</strong>: 1.4. Have you undergone training before raising chickens?</li>
+                        <li><strong>Variable Name</strong>: training_received</li>
+                        <li><strong>Choices</strong>: Yes, No</li>
                     </ul>
                 </li>
-                <li><strong>Training Details:</strong>
+                <li><strong>Training Details</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> If yes, when and by who?</li>
-                        <li><strong>Variable Name:</strong> training_details</li>
-                        <li><strong>Skip Logic:</strong> selected(${training_received}, 'yes')</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 1.5. If yes, when and by who?</li>
+                        <li><strong>Variable Name</strong>: training_details</li>
+                        <li><strong>Skip Logic</strong>: selected(${training_received}, 'yes')</li>
                     </ul>
                 </li>
-                <li><strong>Introduction Source:</strong>
+                <li><strong>Introduction Source</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one intro_source</li>
-                        <li><strong>Label:</strong> 1.5. Who introduced broiler chicken farming to you?</li>
-                        <li><strong>Variable Name:</strong> introduction_source</li>
-                        <li><strong>Choices:</strong> Friend, Family member/Relative, Neighbour</li>
-                        <li><strong>Skip Logic:</strong> selected(${training_received}, 'no')</li>
+                        <li><strong>Type</strong>: select_one intro_source</li>
+                        <li><strong>Label</strong>: 1.6. Who introduced broiler chicken farming to you?</li>
+                        <li><strong>Variable Name</strong>: introduction_source</li>
+                        <li><strong>Choices</strong>: Friend, Family member/Relative, Neighbour</li>
+                        <li><strong>Skip Logic</strong>: selected(${training_received}, 'no')</li>
                     </ul>
                 </li>
-                <li><strong>Why Stopped:</strong>
+                <li><strong>Why Stopped</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_multiple stop_reason</li>
-                        <li><strong>Label:</strong> 1.6. Why did you stop broiler farming?</li>
-                        <li><strong>Variable Name:</strong> why_stopped</li>
-                        <li><strong>Choices:</strong> No access to feed, High prices of feed, No access to day-old chicks, High prices of day-old chicks, No access to markets, Expenses exceeded revenue, Other (explain)</li>
-                        <li><strong>Skip Logic:</strong> selected(${stopped_raising}, 'yes')</li>
+                        <li><strong>Type</strong>: select_multiple stop_reason</li>
+                        <li><strong>Label</strong>: 1.7. Why did you stop broiler farming?</li>
+                        <li><strong>Variable Name</strong>: why_stopped</li>
+                        <li><strong>Choices</strong>: No access to feed, High prices of feed, No access to day-old chicks, High prices of day-old chicks, No access to markets, Expenses exceeded revenue, Other (explain)</li>
+                        <li><strong>Skip Logic</strong>: selected(${stopped_raising}, 'yes')</li>
                     </ul>
                 </li>
             </ul>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: In the form builder, click <em class="font-medium">+ Add Group</em>. Set Name to `general_background` and Label to `Section 1: General Background`. Save.</li>
+                <li><strong>Add Questions</strong>: For each question:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> inside the `general_background` group.</li>
+                        <li>Select <strong>Type</strong> (e.g., `geopoint` for Farm Location, `select_multiple` for Motivation).</li>
+                        <li>Enter the <strong>Label</strong> (e.g., "1.1. Where are you located (location of farm)?").</li>
+                        <li>Set <strong>Variable Name</strong> (e.g., `farm_location`).</li>
+                        <li>Add <strong>Choices</strong> for `select_one`/`select_multiple` (e.g., for Motivation, add "Cash (Income)", "For special needs", etc.).</li>
+                        <li>Add <strong>Hint</strong> where listed (e.g., "Record GPS coordinates of the farm" for Farm Location).</li>
+                        <li>For questions with <strong>Skip Logic</strong>:
+                            <ul class="list-circle list-inside ml-6 space-y-1">
+                                <li>Click the gear icon, go to Skip Logic tab.</li>
+                                <li>Add condition (e.g., for Training Details, set `selected(${training_received}, 'yes')`).</li>
+                            </ul>
+                        </li>
+                        <li>Add <strong>Constraint</strong> for Years Raising: Set `${years_raising} >= 0` to allow zero years for new farmers.</li>
+                    </ul>
+                </li>
+                <li><strong>Order Questions</strong>: Arrange questions in order: Farm Location, Years Raising, Motivation, Training Received, Training Details, Introduction Source, Why Stopped.</li>
+                <li><strong>Test Skip Logic</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, test <em class="font-medium">Training Details</em>: Set `training_received` to "Yes" (should show), then "No" (should hide).</li>
+                        <li>Test <em class="font-medium">Introduction Source</em>: Set `training_received` to "No" (should show), then "Yes" (should hide).</li>
+                        <li>Test <em class="font-medium">Why Stopped</em>: Set `stopped_raising` to "Yes" (should show), then "No" (should hide).</li>
+                    </ul>
+                </li>
+                <li><strong>Test Question Flow</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Enter sample responses (e.g., GPS coordinates for Farm Location, 5 for Years Raising, multiple selections for Motivation).</li>
+                        <li>Verify group label "Section 1: General Background" displays.</li>
+                        <li>Ensure `select_multiple` (Motivation, Why Stopped) allows multiple selections, and `geopoint` captures coordinates.</li>
+                        <li>Test constraint: Try negative value for Years Raising; an error should prevent submission.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon.</li>
+            </ol>
+            <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
+                <p class="text-gray-600"><strong>Tip:</strong> Test skip logic thoroughly in Preview to ensure questions appear only when conditions are met, avoiding respondent confusion.</p>
+            </div>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">4.3 Chicken Background Section</h3>
-            <p class="mb-2"><strong>Create Group:</strong></p>
+            <p class="mb-2"><strong>Create Group</strong>: Group questions about broiler breeds and sourcing.</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Name:</strong> chicken_background, <strong>Label:</strong> Section 2: Chicken Background.</li>
+                <li><strong>Name</strong>: chicken_background</li>
+                <li><strong>Label</strong>: Section 2: Chicken Background</li>
             </ul>
-            <p class="mb-2"><strong>Add Questions:</strong></p>
+            <p class="mb-2"><strong>Add Questions</strong>:</p>
             <ul class="list-disc list-inside mb-4 space-y-4">
-                <li><strong>Chicken Breed:</strong>
+                <li><strong>Chicken Breed</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_multiple chicken_breed</li>
-                        <li><strong>Label:</strong> 2.1. What are the breed of the chickens you raise?</li>
-                        <li><strong>Variable Name:</strong> chicken_breed</li>
-                        <li><strong>Choices:</strong> ROSS 308 – Tablebirds, COBB 500 – Zenag</li>
+                        <li><strong>Type</strong>: select_multiple chicken_breed</li>
+                        <li><strong>Label</strong>: 2.1. What are the breed of the chickens you raise?</li>
+                        <li><strong>Variable Name</strong>: chicken_breed</li>
+                        <li><strong>Choices</strong>: ROSS 308 – Tablebirds, COBB 500 – Zenag</li>
                     </ul>
                 </li>
-                <li><strong>Source of Chicks:</strong>
+                <li><strong>Source of Chicks</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 2.2. Where do you buy broiler day-old chicks?</li>
-                        <li><strong>Variable Name:</strong> source_chicks</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 2.2. Where do you buy broiler day-old chicks?</li>
+                        <li><strong>Variable Name</strong>: source_chicks</li>
                     </ul>
                 </li>
-                <li><strong>Reason for Supplier:</strong>
+                <li><strong>Reason for Supplier</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 2.3. Why do you get chickens from this supplier and not the others?</li>
-                        <li><strong>Variable Name:</strong> reason_supplier</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 2.3. Why do you get chickens from this supplier and not the others?</li>
+                        <li><strong>Variable Name</strong>: reason_supplier</li>
                     </ul>
                 </li>
-                <li><strong>Price of Chicks:</strong>
+                <li><strong>Price of Chicks</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> decimal</li>
-                        <li><strong>Label:</strong> 2.4. What is the price of a box of Day-old chicks?</li>
-                        <li><strong>Variable Name:</strong> price_chicks</li>
+                        <li><strong>Type</strong>: decimal</li>
+                        <li><strong>Label</strong>: 2.4. What is the price of a box of Day-old chicks?</li>
+                        <li><strong>Variable Name</strong>: price_chicks</li>
                     </ul>
                 </li>
-                <li><strong>Sell Time:</strong>
+                <li><strong>Sell Time</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 2.5. When do you start selling your broiler chickens?</li>
-                        <li><strong>Variable Name:</strong> sell_time</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 2.5. When do you start selling your broiler chickens?</li>
+                        <li><strong>Variable Name</strong>: sell_time</li>
                     </ul>
                 </li>
-                <li><strong>Sell Price:</strong>
+                <li><strong>Sell Price</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> decimal</li>
-                        <li><strong>Label:</strong> 2.6. How much do you sell your broiler chickens for?</li>
-                        <li><strong>Variable Name:</strong> sell_price</li>
+                        <li><strong>Type</strong>: decimal</li>
+                        <li><strong>Label</strong>: 2.6. How much do you sell your broiler chickens for?</li>
+                        <li><strong>Variable Name</strong>: sell_price</li>
                     </ul>
                 </li>
             </ul>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: Click <em class="font-medium">+ Add Group</em>. Set Name to `chicken_background` and Label to `Section 2: Chicken Background`. Save.</li>
+                <li><strong>Add Questions</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> in the `chicken_background` group.</li>
+                        <li>Select <strong>Type</strong> (e.g., `select_multiple` for Chicken Breed, `decimal` for Price of Chicks).</li>
+                        <li>Enter <strong>Label</strong> (e.g., "2.1. What are the breed of the chickens you raise?").</li>
+                        <li>Set <strong>Variable Name</strong> (e.g., `chicken_breed`).</li>
+                        <li>Add <strong>Choices</strong> for `select_multiple` (e.g., for Chicken Breed, add "ROSS 308 – Tablebirds", "COBB 500 – Zenag").</li>
+                        <li>Add <strong>Constraint</strong> for Price of Chicks and Sell Price: Set `${price_chicks} > 0` and `${sell_price} > 0` in the Constraints field to prevent negative values.</li>
+                    </ul>
+                </li>
+                <li><strong>Order Questions</strong>: Arrange in order: Chicken Breed, Source of Chicks, Reason for Supplier, Price of Chicks, Sell Time, Sell Price.</li>
+                <li><strong>Test Question Flow</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, enter sample responses (e.g., select both breeds for Chicken Breed, "Local supplier" for Source of Chicks, 200.50 for Price of Chicks).</li>
+                        <li>Verify `select_multiple` allows multiple selections, `decimal` accepts numbers with decimals, and `text` accepts free-form input.</li>
+                        <li>Check that the group label "Section 2: Chicken Background" displays.</li>
+                        <li>Test constraints: Try entering negative values for Price of Chicks or Sell Price; an error should prevent submission.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon.</li>
+            </ol>
+            <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
+                <p class="text-gray-600"><strong>Tip:</strong> For `decimal` questions like Price of Chicks, add a hint (e.g., "Enter cost in PGK") to guide respondents on the expected currency.</p>
+            </div>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">4.4 Feeding Practices Section</h3>
-            <p class="mb-2"><strong>Create Group:</strong></p>
+            <p class="mb-2"><strong>Create Group</strong>: Group questions about feeding strategies and practices.</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Name:</strong> feeding_practices, <strong>Label:</strong> Section 3: Feeding Practices.</li>
+                <li><strong>Name</strong>: feeding_practices</li>
+                <li><strong>Label</strong>: Section 3: Feeding Practices</li>
             </ul>
-            <p class="mb-2"><strong>Add Questions:</strong></p>
+            <p class="mb-2"><strong>Add Questions</strong>:</p>
             <ul class="list-disc list-inside mb-4 space-y-4">
-                <li><strong>Primary Feed:</strong>
+                <li><strong>Primary Feed</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one feed_type</li>
-                        <li><strong>Label:</strong> 3.1. What type of feed do you primarily use?</li>
-                        <li><strong>Variable Name:</strong> primary_feed</li>
-                        <li><strong>Choices:</strong> Commercial, Home-made, Mix</li>
+                        <li><strong>Type</strong>: select_one feed_type</li>
+                        <li><strong>Label</strong>: 3.1. What type of feed do you primarily use?</li>
+                        <li><strong>Variable Name</strong>: primary_feed</li>
+                        <li><strong>Choices</strong>: Commercial, Home-made, Mix</li>
                     </ul>
                 </li>
-                <li><strong>Feed Brand:</strong>
+                <li><strong>Feed Brand</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 3.2. What brand of feed(s) do you use?</li>
-                        <li><strong>Variable Name:</strong> feed_brand</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 3.2. What brand of feed(s) do you use?</li>
+                        <li><strong>Variable Name</strong>: feed_brand</li>
                     </ul>
                 </li>
-                <li><strong>Feed Cost:</strong>
+                <li><strong>Feed Cost</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> decimal</li>
-                        <li><strong>Label:</strong> 3.3. How much does this feed cost?</li>
-                        <li><strong>Variable Name:</strong> feed_cost</li>
+                        <li><strong>Type</strong>: decimal</li>
+                        <li><strong>Label</strong>: 3.3. How much does this feed cost?</li>
+                        <li><strong>Variable Name</strong>: feed_cost</li>
+                        <li><strong>Hint</strong>: Enter cost in PGK</li>
                     </ul>
                 </li>
-                <li><strong>Feed Reason:</strong>
+                <li><strong>Feed Reason</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 3.4. Why do you use/prefer this feed?</li>
-                        <li><strong>Variable Name:</strong> feed_reason</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 3.4. Why do you use/prefer this feed?</li>
+                        <li><strong>Variable Name</strong>: feed_reason</li>
                     </ul>
                 </li>
-                <li><strong>Starter Used:</strong>
+                <li><strong>Starter Used</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one starter_feed_type</li>
-                        <li><strong>Label:</strong> 3.5. Do you use broiler starter crumbles?</li>
-                        <li><strong>Variable Name:</strong> starter_used</li>
-                        <li><strong>Choices:</strong> Yes, No (state reason), Own mix</li>
+                        <li><strong>Type</strong>: select_one starter_feed_type</li>
+                        <li><strong>Label</strong>: 3.5. Do you use broiler starter crumbles?</li>
+                        <li><strong>Variable Name</strong>: starter_used</li>
+                        <li><strong>Choices</strong>: Yes, No (state reason), Own mix</li>
                     </ul>
                 </li>
-                <li><strong>Starter Duration:</strong>
+                <li><strong>Starter Duration</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one starter_duration</li>
-                        <li><strong>Label:</strong> 3.6. How long do you feed this to chicks?</li>
-                        <li><strong>Variable Name:</strong> starter_duration</li>
-                        <li><strong>Choices:</strong> 0–14 days (2 weeks), 0–21 days (3 weeks), 0–28 days (4 weeks), 0–42+ days (6 weeks+)</li>
-                        <li><strong>Skip Logic:</strong> selected(${starter_used}, 'yes')</li>
+                        <li><strong>Type</strong>: select_one starter_duration</li>
+                        <li><strong>Label</strong>: 3.6. How long do you feed this to chicks?</li>
+                        <li><strong>Variable Name</strong>: starter_duration</li>
+                        <li><strong>Choices</strong>: 0–14 days (2 weeks), 0–21 days (3 weeks), 0–28 days (4 weeks), 0–42+ days (6 weeks+)</li>
+                        <li><strong>Skip Logic</strong>: selected(${starter_used}, 'yes')</li>
                     </ul>
                 </li>
-                <li><strong>Finisher Used:</strong>
+                <li><strong>Finisher Used</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one finisher_feed_type</li>
-                        <li><strong>Label:</strong> 3.7. Do you use broiler finisher pellets?</li>
-                        <li><strong>Variable Name:</strong> finisher_used</li>
-                        <li><strong>Choices:</strong> Yes, No (state reason), Own mix (describe)</li>
+                        <li><strong>Type</strong>: select_one finisher_feed_type</li>
+                        <li><strong>Label</strong>: 3.7. Do you use broiler finisher pellets?</li>
+                        <li><strong>Variable Name</strong>: finisher_used</li>
+                        <li><strong>Choices</strong>: Yes, No (state reason), Own mix (describe)</li>
                     </ul>
                 </li>
-                <li><strong>Finisher Start:</strong>
+                <li><strong>Finisher Start</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one finisher_start</li>
-                        <li><strong>Label:</strong> 3.8. When do you switch to finisher feed?</li>
-                        <li><strong>Variable Name:</strong> finisher_start</li>
-                        <li><strong>Choices:</strong> 14 days, 22 days, 29 days</li>
-                        <li><strong>Skip Logic:</strong> selected(${finisher_used}, 'yes')</li>
+                        <li><strong>Type</strong>: select_one finisher_start</li>
+                        <li><strong>Label</strong>: 3.8. When do you switch to finisher feed?</li>
+                        <li><strong>Variable Name</strong>: finisher_start</li>
+                        <li><strong>Choices</strong>: 14 days, 22 days, 29 days</li>
+                        <li><strong>Skip Logic</strong>: selected(${finisher_used}, 'yes')</li>
                     </ul>
                 </li>
-                <li><strong>Same Brand:</strong>
+                <li><strong>Same Brand</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one yes_no</li>
-                        <li><strong>Label:</strong> 3.9. Do you use the same brand to start and finish?</li>
-                        <li><strong>Variable Name:</strong> same_brand</li>
-                        <li><strong>Choices:</strong> Yes, No</li>
+                        <li><strong>Type</strong>: select_one yes_no</li>
+                        <li><strong>Label</strong>: 3.9. Do you use the same brand to start and finish?</li>
+                        <li><strong>Variable Name</strong>: same_brand</li>
+                        <li><strong>Choices</strong>: Yes, No</li>
                     </ul>
                 </li>
-                <li><strong>Different Brand:</strong>
+                <li><strong>Different Brand</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> If No, what other brand?</li>
-                        <li><strong>Variable Name:</strong> different_brand</li>
-                        <li><strong>Skip Logic:</strong> selected(${same_brand}, 'no')</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 3.10. If No, what other brand?</li>
+                        <li><strong>Variable Name</strong>: different_brand</li>
+                        <li><strong>Skip Logic</strong>: selected(${same_brand}, 'no')</li>
                     </ul>
                 </li>
-                <li><strong>Feed Transport:</strong>
+                <li><strong>Feed Transport</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one transport_mode</li>
-                        <li><strong>Label:</strong> 3.10. How do you transport the feed to your farm?</li>
-                        <li><strong>Variable Name:</strong> feed_transport</li>
-                        <li><strong>Choices:</strong> PMV (Public motor vehicle), Own vehicle, Other</li>
+                        <li><strong>Type</strong>: select_one transport_mode</li>
+                        <li><strong>Label</strong>: 3.11. How do you transport the feed to your farm?</li>
+                        <li><strong>Variable Name</strong>: feed_transport</li>
+                        <li><strong>Choices</strong>: PMV (Public motor vehicle), Own vehicle, Other</li>
                     </ul>
                 </li>
-                <li><strong>Transport Cost:</strong>
+                <li><strong>Transport Cost</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> decimal</li>
-                        <li><strong>Label:</strong> 3.11. Cost for transporting feed?</li>
-                        <li><strong>Variable Name:</strong> transport_cost</li>
+                        <li><strong>Type</strong>: decimal</li>
+                        <li><strong>Label</strong>: 3.12. Cost for transporting feed?</li>
+                        <li><strong>Variable Name</strong>: transport_cost</li>
+                        <li><strong>Hint</strong>: Enter cost in PGK</li>
                     </ul>
                 </li>
-                <li><strong>Feeding Regime:</strong>
+                <li><strong>Feeding Regime</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 3.12. Describe your feeding regime by growth stages.</li>
-                        <li><strong>Variable Name:</strong> feeding_regime</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 3.13. Describe your feeding regime by growth stages.</li>
+                        <li><strong>Variable Name</strong>: feeding_regime</li>
                     </ul>
                 </li>
-                <li><strong>Uses Other Feed:</strong>
+                <li><strong>Uses Other Feed</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one yes_no</li>
-                        <li><strong>Label:</strong> 3.13. Do you use feedstuff other than complete feeds?</li>
-                        <li><strong>Variable Name:</strong> uses_other_feed</li>
-                        <li><strong>Choices:</strong> Yes, No</li>
+                        <li><strong>Type</strong>: select_one yes_no</li>
+                        <li><strong>Label</strong>: 3.14. Do you use feedstuff other than complete feeds?</li>
+                        <li><strong>Variable Name</strong>: uses_other_feed</li>
+                        <li><strong>Choices</strong>: Yes, No</li>
                     </ul>
                 </li>
-                <li><strong>Other Feed Types:</strong>
+                <li><strong>Other Feed Types</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_multiple alt_feed_source</li>
-                        <li><strong>Label:</strong> 3.14. What type of other feedstuff do you use?</li>
-                        <li><strong>Variable Name:</strong> other_feed_types</li>
-                        <li><strong>Choices:</strong> Purchased (specify), From own garden, Kitchen waste/Leftovers, Supplementary feed</li>
-                        <li><strong>Skip Logic:</strong> selected(${uses_other_feed}, 'yes')</li>
+                        <li><strong>Type</strong>: select_multiple alt_feed_source</li>
+                        <li><strong>Label</strong>: 3.15. What type of other feedstuff do you use?</li>
+                        <li><strong>Variable Name</strong>: other_feed_types</li>
+                        <li><strong>Choices</strong>: Purchased (specify), From own garden, Kitchen waste/Leftovers, Supplementary feed</li>
+                        <li><strong>Skip Logic</strong>: selected(${uses_other_feed}, 'yes')</li>
                     </ul>
                 </li>
-                <li><strong>Weight Achieved:</strong>
+                <li><strong>Weight Achieved</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one yes_no</li>
-                        <li><strong>Label:</strong> 3.15. Do you get desired weight from this regime?</li>
-                        <li><strong>Variable Name:</strong> weight_achieved</li>
-                        <li><strong>Choices:</strong> Yes, No</li>
+                        <li><strong>Type</strong>: select_one yes_no</li>
+                        <li><strong>Label</strong>: 3.16. Do you get desired weight from this regime?</li>
+                        <li><strong>Variable Name</strong>: weight_achieved</li>
+                        <li><strong>Choices</strong>: Yes, No</li>
                     </ul>
                 </li>
-                <li><strong>Weight Reason:</strong>
+                <li><strong>Weight Reason</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> If No, explain why.</li>
-                        <li><strong>Variable Name:</strong> weight_reason</li>
-                        <li><strong>Skip Logic:</strong> selected(${weight_achieved}, 'no')</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 3.17. If No, explain why.</li>
+                        <li><strong>Variable Name</strong>: weight_reason</li>
+                        <li><strong>Skip Logic</strong>: selected(${weight_achieved}, 'no')</li>
                     </ul>
                 </li>
-                <li><strong>Feed Storage:</strong>
+                <li><strong>Feed Storage</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 3.16. How do you store the feed?</li>
-                        <li><strong>Variable Name:</strong> feed_storage</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 3.18. How do you store the feed?</li>
+                        <li><strong>Variable Name</strong>: feed_storage</li>
                     </ul>
                 </li>
-                <li><strong>Feed Loss:</strong>
+                <li><strong>Feed Loss</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one yes_no</li>
-                        <li><strong>Label:</strong> 3.17. Do you experience feed losses?</li>
-                        <li><strong>Variable Name:</strong> feed_loss</li>
-                        <li><strong>Choices:</strong> Yes, No</li>
+                        <li><strong>Type</strong>: select_one yes_no</li>
+                        <li><strong>Label</strong>: 3.19. Do you experience feed losses?</li>
+                        <li><strong>Variable Name</strong>: feed_loss</li>
+                        <li><strong>Choices</strong>: Yes, No</li>
                     </ul>
                 </li>
-                <li><strong>Feed Loss Explain:</strong>
+                <li><strong>Feed Loss Explain</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> If Yes, describe losses.</li>
-                        <li><strong>Variable Name:</strong> feed_loss_explain</li>
-                        <li><strong>Skip Logic:</strong> selected(${feed_loss}, 'yes')</li>
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 3.20. If Yes, describe losses.</li>
+                        <li><strong>Variable Name</strong>: feed_loss_explain</li>
+                        <li><strong>Skip Logic</strong>: selected(${feed_loss}, 'yes')</li>
                     </ul>
                 </li>
             </ul>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: In the form builder, click <em class="font-medium">+ Add Group</em>. Set Name to `feeding_practices` and Label to `Section 3: Feeding Practices`. Save.</li>
+                <li><strong>Add Questions</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> in the `feeding_practices` group.</li>
+                        <li>Select <strong>Type</strong> (e.g., `select_one` for Primary Feed, `decimal` for Feed Cost).</li>
+                        <li>Enter <strong>Label</strong> (e.g., "3.1. What type of feed do you primarily use?").</li>
+                        <li>Set <strong>Variable Name</strong> (e.g., `primary_feed`).</li>
+                        <li>Add <strong>Choices</strong> for `select_one`/`select_multiple` (e.g., for Primary Feed, add "Commercial", "Home-made", "Mix").</li>
+                        <li>Add <strong>Hint</strong> where specified (e.g., "Enter cost in PGK" for Feed Cost).</li>
+                        <li>Add <strong>Constraint</strong> for Feed Cost and Transport Cost: Set `${feed_cost} > 0` and `${transport_cost} >= 0` in the Constraints field.</li>
+                        <li>Add <strong>Skip Logic</strong> where specified:
+                            <ul class="list-circle list-inside ml-6 space-y-1">
+                                <li>For Starter Duration: Click gear icon, go to Skip Logic, set `selected(${starter_used}, 'yes')`.</li>
+                                <li>For Finisher Start: Set `selected(${finisher_used}, 'yes')`.</li>
+                                <li>For Different Brand: Set `selected(${same_brand}, 'no')`.</li>
+                                <li>For Other Feed Types: Set `selected(${uses_other_feed}, 'yes')`.</li>
+                                <li>For Weight Reason: Set `selected(${weight_achieved}, 'no')`.</li>
+                                <li>For Feed Loss Explain: Set `selected(${feed_loss}, 'yes')`.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Order Questions</strong>: Drag questions to match the order: Primary Feed, Feed Brand, Feed Cost, Feed Reason, Starter Used, Starter Duration, Finisher Used, Finisher Start, Same Brand, Different Brand, Feed Transport, Transport Cost, Feeding Regime, Uses Other Feed, Other Feed Types, Weight Achieved, Weight Reason, Feed Storage, Feed Loss, Feed Loss Explain.</li>
+                <li><strong>Test Skip Logic</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, test Starter Duration: Set `starter_used` to "Yes" (should show), then "No" or "Own mix" (should hide).</li>
+                        <li>Test Finisher Start: Set `finisher_used` to "Yes" (should show), then "No" or "Own mix" (should hide).</li>
+                        <li>Test Different Brand: Set `same_brand` to "No" (should show), then "Yes" (should hide).</li>
+                        <li>Test Other Feed Types: Set `uses_other_feed` to "Yes" (should show), then "No" (should hide).</li>
+                        <li>Test Weight Reason: Set `weight_achieved` to "No" (should show), then "Yes" (should hide).</li>
+                        <li>Test Feed Loss Explain: Set `feed_loss` to "Yes" (should show), then "No" (should hide).</li>
+                    </ul>
+                </li>
+                <li><strong>Test Question Flow</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Enter sample responses (e.g., "Commercial" for Primary Feed, 150.50 for Feed Cost, "Starter for 3 weeks" for Feeding Regime).</li>
+                        <li>Verify group label "Section 3: Feeding Practices" displays clearly.</li>
+                        <li>Ensure `select_multiple` (Other Feed Types) allows multiple selections, `decimal` accepts decimals, and constraints block negative values.</li>
+                        <li>Test all questions appear in order (3.1 to 3.20) and inputs are saved correctly.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon frequently to avoid losing progress.</li>
+            </ol>
+            <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
+                <p class="text-gray-600"><strong>Tip:</strong> For questions with skip logic, verify conditions in Preview to ensure they trigger correctly. Use hints like "Enter cost in PGK" to clarify expected input formats.</p>
+            </div>
 
             <h3 class="text-xl font-medium text-teal-500 mb-2">4.5 Nutritional Knowledge Section</h3>
-            <p class="mb-2"><strong>Create Group:</strong></p>
+            <p class="mb-2"><strong>Create Group</strong>: Group questions about the farmer’s nutritional knowledge.</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Name:</strong> nutritional_knowledge, <strong>Label:</strong> Section 4: Nutritional Knowledge.</li>
+                <li><strong>Name</strong>: nutritional_knowledge</li>
+                <li><strong>Label</strong>: Section 4: Nutritional Knowledge</li>
             </ul>
-            <p class="mb-2"><strong>Add Questions:</strong></p>
+            <p class="mb-2"><strong>Add Questions</strong>:</p>
             <ul class="list-disc list-inside mb-4 space-y-4">
-                <li><strong>Nutrition Knowledge Source:</strong>
+                <li><strong>Nutrition Knowledge Source</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_multiple nutrition_source</li>
-                        <li><strong>Label:</strong> 4.1. How did you acquire your nutritional knowledge?</li>
-                        <li><strong>Variable Name:</strong> nutrition_knowledge_source</li>
-                        <li><strong>Choices:</strong> DAL/Extension Officers, NGO, Friend/Relative, Reading materials, Other</li>
+                        <li><strong>Type</strong>: select_multiple nutrition_source</li>
+                        <li><strong>Label</strong>: 4.1. How did you acquire your nutritional knowledge?</li>
+                        <li><strong>Variable Name</strong>: nutrition_knowledge_source</li>
+                        <li><strong>Choices</strong>: DAL/Extension Officers, NGO, Friend/Relative, Reading materials, Other</li>
                     </ul>
                 </li>
-                <li><strong>Nutrition Resources:</strong>
+                <li><strong>Nutrition Resources</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_multiple nutrition_resource</li>
-                        <li><strong>Label:</strong> 4.2. What resources do you rely on?</li>
-                        <li><strong>Variable Name:</strong> nutrition_resources</li>
-                        <li><strong>Choices:</strong> Reading materials, Other</li>
+                        <li><strong>Type</strong>: select_multiple nutrition_resource</li>
+                        <li><strong>Label</strong>: 4.2. What resources do you rely on?</li>
+                        <li><strong>Variable Name</strong>: nutrition_resources</li>
+                        <li><strong>Choices</strong>: Reading materials, Other</li>
                     </ul>
                 </li>
-                <li><strong>Confidence:</strong>
+                <li><strong>Confidence</strong>:
                     <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one yes_no</li>
-                        <li><strong>Label:</strong> 4.3. Do you feel confident in your understanding?</li>
-                        <li><strong>Variable Name:</strong> confidence</li>
-                        <li><strong>Choices:</strong> Yes, No</li>
+                        <li><strong>Type</strong>: select_one yes_no</li>
+                        <li><strong>Label</strong>: 4.3. Do you feel confident in your understanding?</li>
+                        <li><strong>Variable Name</strong>: confidence</li>
+                        <li><strong>Choices</strong>: Yes, No</li>
                     </ul>
                 </li>
             </ul>
-
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: Click <em class="font-medium">+ Add Group</em>. Set Name to `nutritional_knowledge` and Label to `Section 4: Nutritional Knowledge`. Save.</li>
+                <li><strong>Add Questions</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> in the `nutritional_knowledge` group.</li>
+                        <li>Select <strong>Type</strong> (e.g., `select_multiple` for Nutrition Knowledge Source, `select_one` for Confidence).</li>
+                        <li>Enter <strong>Label</strong> (e.g., "4.1. How did you acquire your nutritional knowledge?").</li>
+                        <li>Set <strong>Variable Name</strong> (e.g., `nutrition_knowledge_source`).</li>
+                        <li>Add <strong>Choices</strong> (e.g., for Nutrition Knowledge Source, add "DAL/Extension Officers", "NGO", etc.).</li>
+                    </ul>
+                </li>
+                <li><strong>Order Questions</strong>: Arrange in order: Nutrition Knowledge Source, Nutrition Resources, Confidence.</li>
+                <li><strong>Test Question Flow</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, enter sample responses (e.g., select "DAL/Extension Officers" and "Reading materials" for Nutrition Knowledge Source, "Yes" for Confidence).</li>
+                        <li>Verify group label "Section 4: Nutritional Knowledge" displays clearly.</li>
+                        <li>Ensure `select_multiple` questions (Nutrition Knowledge Source, Nutrition Resources) allow multiple selections, and `select_one` (Confidence) restricts to one choice.</li>
+                        <li>Check that all choices are visible and selectable.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon.</li>
+            </ol>
             <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
-                <p class="text-gray-600"><strong>Tip:</strong> Use the Hint field to provide guidance (e.g., "Enter full name of respondent"). Drag questions to reorder for logical flow.</p>
+                <p class="text-gray-600"><strong>Tip:</strong> For `select_multiple` questions, ensure all relevant choices are included to capture comprehensive data. Test in Preview to confirm multiple selections work as expected.</p>
+            </div>
+
+            <h3 class="text-xl font-medium text-teal-500 mb-2">4.5 Market & Economic Consideration Section</h3>
+            <p class="mb-2"><strong>Create Group</strong>: Group questions about market dynamics and economic factors.</p>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li><strong>Name</strong>: market_economics</li>
+                <li><strong>Label</strong>: Section 5: Market & Economic Consideration</li>
+            </ul>
+            <p class="mb-2"><strong>Add Questions</strong>:</p>
+            <ul class="list-disc list-inside mb-4 space-y-4">
+                <li><strong>Profit Impact</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 5.1. How do feed costs affect your profitability?</li>
+                        <li><strong>Variable Name</strong>: profit_impact</li>
+                    </ul>
+                </li>
+                <li><strong>Feed Challenges</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 5.2. Challenges accessing quality feed?</li>
+                        <li><strong>Variable Name</strong>: feed_challenges</li>
+                    </ul>
+                </li>
+                <li><strong>Price Fluctuation</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 5.3. Market price effects on feeding?</li>
+                        <li><strong>Variable Name</strong>: price_fluctuation</li>
+                    </ul>
+                </li>
+                <li><strong>Market Price</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: decimal</li>
+                        <li><strong>Label</strong>: 5.4. Normal market price per live chicken?</li>
+                        <li><strong>Variable Name</strong>: market_price</li>
+                        <li><strong>Hint</strong>: Enter price in PGK</li>
+                    </ul>
+                </li>
+                <li><strong>Pricing Criteria</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 5.5. How do you determine chicken price?</li>
+                        <li><strong>Variable Name</strong>: pricing_criteria</li>
+                    </ul>
+                </li>
+                <li><strong>Selling Location</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: select_multiple selling_place</li>
+                        <li><strong>Label</strong>: 5.6. Where are chickens sold?</li>
+                        <li><strong>Variable Name</strong>: selling_location</li>
+                        <li><strong>Choices</strong>: Main/Local Market, Farm gate, Live/Carcass Orders, Other</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: Click <em class="font-medium">+ Add Group</em>. Set Name to `market_economics` and Label to `Section 5: Market & Economic Consideration`. Save.</li>
+                <li><strong>Add Questions</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> in the `market_economics` group.</li>
+                        <li>Select <strong>Type</strong> (e.g., `text` for Profit Impact, `select_multiple` for Selling Location).</li>
+                        <li>Enter <strong>Label</strong> (e.g., "5.1. How do feed costs affect your profitability?").</li>
+                        <li>Set <strong>Variable Name</strong> (e.g., `profit_impact`).</li>
+                        <li>Add <strong>Choices</strong> for Selling Location: "Main/Local Market", "Farm gate", "Live/Carcass Orders", "Other".</li>
+                        <li>Add <strong>Hint</strong> for Market Price: "Enter price in PGK".</li>
+                        <li>Add <strong>Constraint</strong> for Market Price: Set `${market_price} > 0` to prevent negative values.</li>
+                    </ul>
+                </li>
+                <li><strong>Order Questions</strong>: Arrange in order: Profit Impact, Feed Challenges, Price Fluctuation, Market Price, Pricing Criteria, Selling Location.</li>
+                <li><strong>Test Question Flow</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, enter sample responses (e.g., "High costs reduce margins" for Profit Impact, 25.50 for Market Price, select "Main/Local Market" and "Farm gate" for Selling Location).</li>
+                        <li>Verify group label "Section 5: Market & Economic Consideration" displays clearly.</li>
+                        <li>Ensure `select_multiple` (Selling Location) allows multiple selections, `decimal` (Market Price) accepts decimals, and `text` questions accept free-form input.</li>
+                        <li>Test constraint: Try entering a negative value for Market Price (e.g., -5); an error should prevent submission.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon.</li>
+            </ol>
+            <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
+                <p class="text-gray-600"><strong>Tip:</strong> For `decimal` questions like Market Price, ensure constraints prevent invalid inputs (e.g., negative prices) to maintain data quality.</p>
+            </div>
+
+            <h3 class="text-xl font-medium text-teal-500 mb-2">4.6 Challenges and Barriers Section</h3>
+            <p class="mb-2"><strong>Create Group</strong>: Group questions about challenges in broiler farming.</p>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li><strong>Name</strong>: challenges</li>
+                <li><strong>Label</strong>: Section 6: Challenges and Barriers</li>
+            </ul>
+            <p class="mb-2"><strong>Add Questions</strong>:</p>
+            <ul class="list-disc list-inside mb-4 space-y-4">
+                <li><strong>Sourcing Challenges</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 6.1. Challenges sourcing feed?</li>
+                        <li><strong>Variable Name</strong>: sourcing_challenges</li>
+                    </ul>
+                </li>
+                <li><strong>Feeding Barriers</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 6.2. Barriers to better feeding?</li>
+                        <li><strong>Variable Name</strong>: feeding_barriers</li>
+                    </ul>
+                </li>
+                <li><strong>External Factors</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 6.3. External factors affecting feeding?</li>
+                        <li><strong>Variable Name</strong>: external_factors</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: Click <em class="font-medium">+ Add Group</em>. Set Name to `challenges` and Label to `Section 6: Challenges and Barriers`. Save.</li>
+                <li><strong>Add Questions</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> in the `challenges` group.</li>
+                        <li>Select Type `text` for all questions.</li>
+                        <li>Enter <strong>Label</strong> (e.g., "6.1. Challenges sourcing feed?").</li>
+                        <li>Set <strong>Variable Name</strong> (e.g., `sourcing_challenges`).</li>
+                    </ul>
+                </li>
+                <li><strong>Order Questions</strong>: Arrange in order: Sourcing Challenges, Feeding Barriers, External Factors.</li>
+                <li><strong>Test Question Flow</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, enter sample responses (e.g., "Limited suppliers in the area" for Sourcing Challenges, "High transport costs" for Feeding Barriers).</li>
+                        <li>Verify group label "Section 6: Challenges and Barriers" displays clearly.</li>
+                        <li>Ensure `text` questions accept free-form input and display correctly.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon.</li>
+            </ol>
+            <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
+                <p class="text-gray-600"><strong>Tip:</strong> Use open-ended `text` questions to capture detailed qualitative data, but consider adding hints to guide respondents (e.g., "Describe specific issues like availability or cost").</p>
+            </div>
+
+            <h3 class="text-xl font-medium text-teal-500 mb-2">4.7 Performance and Outcomes Section</h3>
+            <p class="mb-2"><strong>Create Group</strong>: Group questions about performance metrics and outcomes.</p>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li><strong>Name</strong>: performance</li>
+                <li><strong>Label</strong>: Section 7: Performance and Outcomes</li>
+            </ul>
+            <p class="mb-2"><strong>Add Questions</strong>:</p>
+            <ul class="list-disc list-inside mb-4 space-y-4">
+                <li><strong>KPI Monitored</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 7.1. What KPIs do you monitor?</li>
+                        <li><strong>Variable Name</strong>: kpi_monitored</li>
+                        <li><strong>Hint</strong>: E.g., weight gain, feed conversion ratio, mortality rate</li>
+                    </ul>
+                </li>
+                <li><strong>Growth Change</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 7.2. Changes in growth/health from feeding?</li>
+                        <li><strong>Variable Name</strong>: growth_change</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: Click <em class="font-medium">+ Add Group</em>. Set Name to `performance` and Label to `Section 7: Performance and Outcomes`. Save.</li>
+                <li><strong>Add Questions</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> in the `performance` group.</li>
+                        <li>Select Type `text` for both questions.</li>
+                        <li>Enter <strong>Label</strong> (e.g., "7.1. What KPIs do you monitor?").</li>
+                        <li>Set <strong>Variable Name</strong> (e.g., `kpi_monitored`).</li>
+                        <li>Add <strong>Hint</strong> for KPI Monitored: "E.g., weight gain, feed conversion ratio, mortality rate".</li>
+                    </ul>
+                </li>
+                <li><strong>Order Questions</strong>: Arrange in order: KPI Monitored, Growth Change.</li>
+                <li><strong>Test Question Flow</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, enter sample responses (e.g., "Weight gain, mortality" for KPI Monitored, "Improved weight with new feed" for Growth Change).</li>
+                        <li>Verify group label "Section 7: Performance and Outcomes" displays clearly.</li>
+                        <li>Ensure `text` questions accept free-form input and that the hint for KPI Monitored is visible.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon.</li>
+            </ol>
+            <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
+                <p class="text-gray-600"><strong>Tip:</strong> Hints like "E.g., weight gain, feed conversion ratio, mortality rate" help respondents understand technical terms like KPIs, improving response quality.</p>
+            </div>
+
+            <h3 class="text-xl font-medium text-teal-500 mb-2">4.8 Future Improvements Section</h3>
+            <p class="mb-2"><strong>Create Group</strong>: Group questions about suggestions for improving broiler farming.</p>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li><strong>Name</strong>: future_improvements</li>
+                <li><strong>Label</strong>: Section 8: Future Improvements</li>
+            </ul>
+            <p class="mb-2"><strong>Add Questions</strong>:</p>
+            <ul class="list-disc list-inside mb-4 space-y-4">
+                <li><strong>Feed Improvement</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 8.1. Suggestions to improve feed access/quality?</li>
+                        <li><strong>Variable Name</strong>: feed_improvement</li>
+                    </ul>
+                </li>
+                <li><strong>Support Needed</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: text</li>
+                        <li><strong>Label</strong>: 8.2. What support would improve your operation?</li>
+                        <li><strong>Variable Name</strong>: support_needed</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: Click <em class="font-medium">+ Add Group</em>. Set Name to `future_improvements` and Label to `Section 8: Future Improvements`. Save.</li>
+                <li><strong>Add Questions</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> in the `future_improvements` group.</li>
+                        <li>Select Type `text` for both questions.</li>
+                        <li>Enter <strong>Label</strong> (e.g., "8.1. Suggestions to improve feed access/quality?").</li>
+                        <li>Set <strong>Variable Name</strong> (e.g., `feed_improvement`).</li>
+                    </ul>
+                </li>
+                <li><strong>Order Questions</strong>: Arrange in order: Feed Improvement, Support Needed.</li>
+                <li><strong>Test Question Flow</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, enter sample responses (e.g., "More local suppliers" for Feed Improvement, "Training programs" for Support Needed).</li>
+                        <li>Verify group label "Section 8: Future Improvements" displays clearly.</li>
+                        <li>Ensure `text` questions accept free-form input and display correctly.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon.</li>
+            </ol>
+            <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
+                <p class="text-gray-600"><strong>Tip:</strong> Open-ended questions like these are ideal for capturing actionable feedback. Consider making them optional to avoid respondent fatigue.</p>
+            </div>
+
+            <h3 class="text-xl font-medium text-teal-500 mb-2">4.9 Closing Section</h3>
+            <p class="mb-2"><strong>Create Group</strong>: Add a closing note to thank respondents and provide context.</p>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li><strong>Name</strong>: closing</li>
+                <li><strong>Label</strong>: Closing</li>
+            </ul>
+            <p class="mb-2"><strong>Add Questions</strong>:</p>
+            <ul class="list-disc list-inside mb-4 space-y-4">
+                <li><strong>Thank You Note</strong>:
+                    <ul class="list-circle list-inside ml-6 space-y-1">
+                        <li><strong>Type</strong>: note</li>
+                        <li><strong>Label</strong>: Thank you for participating in this survey. Your responses will help improve broiler farming support programs.</li>
+                        <li><strong>Variable Name</strong>: thank_you_note</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4 class="text-lg font-medium text-gray-700 mb-2">Instructions</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Create Group</strong>: In the form builder, click <em class="font-medium">+ Add Group</em>. Set Name to `closing` and Label to `Closing`. Save.</li>
+                <li><strong>Add Note</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Click <em class="font-medium">+ Add Question</em> in the `closing` group.</li>
+                        <li>Select Type `note`.</li>
+                        <li>Enter <strong>Label</strong>: "Thank you for participating in this survey. Your responses will help improve broiler farming support programs."</li>
+                        <li>Set <strong>Variable Name</strong>: `thank_you_note`.</li>
+                    </ul>
+                </li>
+                <li><strong>Test Note</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview mode (eye icon), verify the group label "Closing" displays at the top of the section.</li>
+                        <li>Ensure the thank you note appears as text (not an input field) and is readable.</li>
+                        <li>Confirm the note is the final item in the survey flow.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong>: Click the save icon to store changes.</li>
+            </ol>
+            <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
+                <p class="text-gray-600"><strong>Tip:</strong> A `note` question is ideal for closing messages as it displays text without requiring input, providing a professional end to the survey.</p>
             </div>
         </section>
 
         <hr class="border-gray-300 mb-8">
 
         <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">5. Using Advanced Features</h2>
-            <h3 class="text-xl font-medium text-teal-500 mb-2">Repeat Groups</h3>
-            <p class="mb-4">For repeated data (e.g., details per broiler batch), use repeat groups.</p>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>Create a group: <em class="font-medium">batch_details</em>, <strong>Label:</strong> Broiler Batch Details.</li>
-                <li>In settings, check <em class="font-medium">Repeat this group</em>.</li>
-                <li>Add questions:
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><em class="font-medium">batch_size:</em> Number of chicks in batch? (integer).</li>
-                        <li><em class="font-medium">start_date:</em> Batch start date? (date).</li>
-                    </ul>
-                </li>
-            </ul>
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">5. Testing and Validation</h2>
+            <h3 class="text-xl font-medium text-teal-500 mb-2">Why Test?</h3>
+            <p class="mb-4">Testing ensures the survey functions as intended, with correct question flow, skip logic, constraints, and user experience. Validation confirms data is collected accurately for analysis.</p>
 
-            <h3 class="text-xl font-medium text-teal-500 mb-2">Calculations</h3>
-            <p class="mb-4">Use <em class="font-medium">calculate</em> for real-time metrics.</p>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>Add a question:
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> calculate</li>
-                        <li><strong>Label:</strong> Profit calculation</li>
-                        <li><strong>Variable Name:</strong> profit_calc</li>
-                        <li><strong>Expression:</strong> <code class="bg-gray-200 px-1 rounded">${sell_price} * ${broilers_sold} - ${feed_cost}</code></li>
+            <h3 class="text-xl font-medium text-teal-500 mb-2">Steps to Test the Survey</h3>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Preview the Form</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In the form builder, click the <em class="font-medium">Preview</em> icon (eye) in the top toolbar.</li>
+                        <li>Navigate through the survey, entering sample responses for each question (e.g., "John Doe" for Name, 25.50 for Market Price, select "Yes" for Training Received).</li>
+                        <li>Verify group labels (e.g., "Demographics", "Section 3: Feeding Practices") display clearly.</li>
+                        <li>Check that all questions appear in the correct order within their groups.</li>
                     </ul>
                 </li>
-                <li>Display result:
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> note</li>
-                        <li><strong>Label:</strong> Your profit is <code class="bg-gray-200 px-1 rounded">${profit_calc}</code> PGK.</li>
-                        <li><strong>Variable Name:</strong> profit_display</li>
+                <li><strong>Test Skip Logic</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>For questions with skip logic (e.g., Training Details, Starter Duration):
+                            <ul class="list-circle list-inside ml-6 space-y-1">
+                                <li>Test positive conditions (e.g., set `training_received` to "Yes" to show Training Details; set to "No" to hide it).</li>
+                                <li>Test negative conditions (e.g., set `starter_used` to "No" or "Own mix" to hide Starter Duration).</li>
+                                <li>Confirm questions only appear when their conditions are met (e.g., Different Brand should only show if `same_brand` is "No").</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-            </ul>
+                <li><strong>Test Constraints</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>For questions with constraints (e.g., Age: `${age} >= 18`, Feed Cost: `${feed_cost} > 0`):
+                            <ul class="list-circle list-inside ml-6 space-y-1">
+                                <li>Enter invalid inputs (e.g., 15 for Age, -5 for Feed Cost) and check that an error message prevents submission.</li>
+                                <li>Enter valid inputs (e.g., 30 for Age, 150.50 for Feed Cost) and confirm they are accepted.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Test Question Types</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>For `text` questions (e.g., Name, Feed Reason): Enter long and short responses to ensure flexibility.</li>
+                        <li>For `integer` (e.g., Years Raising): Enter whole numbers (e.g., 5, 0) and verify no decimals are allowed.</li>
+                        <li>For `decimal` (e.g., Feed Cost): Enter numbers with decimals (e.g., 25.50) and confirm they save correctly.</li>
+                        <li>For `select_one` (e.g., Gender): Ensure only one option can be selected.</li>
+                        <li>For `select_multiple` (e.g., Motivation): Select multiple options and verify all are recorded.</li>
+                        <li>For `geopoint` (e.g., Farm Location): Simulate GPS input (if possible) or check that the field prompts for coordinates.</li>
+                        <li>For `note` (e.g., Thank You Note): Confirm it displays as text without input fields.</li>
+                    </ul>
+                </li>
+                <li><strong>Simulate Full Survey</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Complete the survey multiple times with different response patterns (e.g., a farmer currently raising broilers vs. one who stopped).</li>
+                        <li>Ensure skip logic paths (e.g., Why Stopped for `stopped_raising` = "Yes") work as expected.</li>
+                        <li>Verify the survey ends with the Thank You Note and submits successfully.</li>
+                    </ul>
+                </li>
+                <li><strong>Validate Data Output</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Submit a few test responses in Preview mode.</li>
+                        <li>Go to the project dashboard, click <em class="font-medium">Data</em>, and view the responses.</li>
+                        <li>Check that variable names (e.g., `name`, `feed_cost`) match responses and are correctly formatted for export (e.g., CSV).</li>
+                        <li>Verify that `select_multiple` responses (e.g., Motivation) are recorded as separate columns or concatenated values, depending on export settings.</li>
+                    </ul>
+                </li>
+            </ol>
             <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
-                <p class="text-gray-600"><strong>Example:</strong> If <em class="font-medium">sell_price</em> = 10 PGK, <em class="font-medium">broilers_sold</em> = 100, and <em class="font-medium">feed_cost</em> = 500 PGK, then <em class="font-medium">profit_calc</em> = 500 PGK.</p>
+                <p class="text-gray-600"><strong>Tip:</strong> Conduct multiple test runs with varied inputs to catch errors in logic or constraints. Export test data to ensure variable names align with your analysis needs.</p>
             </div>
         </section>
 
         <hr class="border-gray-300 mb-8">
 
         <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">6. Applying Skip Logic and Constraints</h2>
-            <h3 class="text-xl font-medium text-teal-500 mb-2">Skip Logic</h3>
-            <p class="mb-2"><strong>Example:</strong> Broiler Status</p>
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">6. Deployment and Data Collection</h2>
+            <h3 class="text-xl font-medium text-teal-500 mb-2">Deploying the Form</h3>
+            <p class="mb-4">Once tested, deploy the form to start collecting data. KoboToolbox supports web and mobile collection, with offline capabilities.</p>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Finalize the Form</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In the form builder, ensure all questions, groups, skip logic, and constraints are correct.</li>
+                        <li>Save the form and return to the project dashboard.</li>
+                    </ul>
+                </li>
+                <li><strong>Deploy the Form</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In the project dashboard, locate your form (e.g., "Broiler Farmer Survey").</li>
+                        <li>Click the <em class="font-medium">Deploy</em> button (rocket icon).</li>
+                        <li>Confirm deployment. The form status will change to "Deployed".</li>
+                    </ul>
+                </li>
+                <li><strong>Choose Collection Method</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li><strong>Web Form</strong>: Click <em class="font-medium">Open</em> to get a URL for online data collection. Share this link with respondents (e.g., via email or messaging apps).</li>
+                        <li><strong>Mobile App (KoboCollect)</strong>:
+                            <ul class="list-circle list-inside ml-6 space-y-1">
+                                <li>Download KoboCollect from the Google Play Store or configure it on enumerators’ devices.</li>
+                                <li>In the project dashboard, click <em class="font-medium">Settings</em>, then <em class="font-medium">Connect with KoboCollect</em> to get a URL or QR code.</li>
+                                <li>Enumerators enter this URL in KoboCollect to download the form for offline use.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Train Enumerators</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>If using enumerators, train them on the survey structure, question intent, and how to use KoboCollect.</li>
+                        <li>Provide guidance on handling skip logic (e.g., skipping Training Details if `training_received` is "No").</li>
+                        <li>Test the form on a mobile device to ensure it’s user-friendly in the field.</li>
+                    </ul>
+                </li>
+                <li><strong>Monitor Data Collection</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Go to the project dashboard and click <em class="font-medium">Data</em> to view incoming responses.</li>
+                        <li>Use the <em class="font-medium">Table</em> view to check responses in real-time or download data as CSV for analysis.</li>
+                        <li>Monitor for incomplete or erroneous submissions and follow up with enumerators if needed.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3 class="text-xl font-medium text-teal-500 mb-2">Best Practices for Data Collection</h3>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Question:</strong> <em class="font-medium">stopped_raising</em> (Have you raised broilers but stopped?, select_one yes_no, Choices: Yes, No).</li>
-                <li><strong>Question:</strong> <em class="font-medium">why_stopped</em> (Why did you stop broiler farming?, select_multiple stop_reason, Choices: No access to feed, High prices of feed, etc.).</li>
-                <li><strong>Skip Logic:</strong> <code class="bg-gray-200 px-1 rounded">selected(${stopped_raising}, 'yes')</code>.</li>
-                <li>In the form builder:
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li>Select <em class="font-medium">why_stopped</em>, click the gear icon, go to <em class="font-medium">Skip Logic</em>.</li>
-                        <li>Add condition: <code class="bg-gray-200 px-1 rounded">selected(${stopped_raising}, 'yes')</code>.</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <h3 class="text-xl font-medium text-teal-500 mb-2">Constraints</h3>
-            <p class="mb-4"><strong>Example:</strong> For <em class="font-medium">feed_cost</em>, set <code class="bg-gray-200 px-1 rounded">${feed_cost} > 0</code> to prevent negative values. Apply via the Constraints field.</p>
-        </section>
-
-        <hr class="border-gray-300 mb-8">
-
-        <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">7. Building the Market & Economic Consideration Section</h2>
-            <p class="mb-2"><strong>Create Group:</strong></p>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Name:</strong> market_economics, <strong>Label:</strong> Section 5: Market & Economic Consideration.</li>
-            </ul>
-            <p class="mb-2"><strong>Add Questions:</strong></p>
-            <ul class="list-disc list-inside mb-4 space-y-4">
-                <li><strong>Profit Impact:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 5.1. How do feed costs affect your profitability?</li>
-                        <li><strong>Variable Name:</strong> profit_impact</li>
-                    </ul>
-                </li>
-                <li><strong>Feed Challenges:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 5.2. Challenges accessing quality feed?</li>
-                        <li><strong>Variable Name:</strong> feed_challenges</li>
-                    </ul>
-                </li>
-                <li><strong>Price Fluctuation:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 5.3. Market price effects on feeding?</li>
-                        <li><strong>Variable Name:</strong> price_fluctuation</li>
-                    </ul>
-                </li>
-                <li><strong>Market Price:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> decimal</li>
-                        <li><strong>Label:</strong> 5.4. Normal market price per live chicken?</li>
-                        <li><strong>Variable Name:</strong> market_price</li>
-                    </ul>
-                </li>
-                <li><strong>Pricing Criteria:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 5.5. How do you determine chicken price?</li>
-                        <li><strong>Variable Name:</strong> pricing_criteria</li>
-                    </ul>
-                </li>
-                <li><strong>Selling Location:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_multiple selling_place</li>
-                        <li><strong>Label:</strong> 5.6. Where are chickens sold?</li>
-                        <li><strong>Variable Name:</strong> selling_location</li>
-                        <li><strong>Choices:</strong> Main/Local Market, Farm gate, Live/Carcass Orders, Other</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <hr class="border-gray-300 mb-8">
-
-        <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">8. Building the Challenges and Barriers Section</h2>
-            <p class="mb-2"><strong>Create Group:</strong></p>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Name:</strong> challenges, <strong>Label:</strong> Section 6: Challenges and Barriers.</li>
-            </ul>
-            <p class="mb-2"><strong>Add Questions:</strong></p>
-            <ul class="list-disc list-inside mb-4 space-y-4">
-                <li><strong>Sourcing Challenges:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 6.1. Challenges sourcing feed?</li>
-                        <li><strong>Variable Name:</strong> sourcing_challenges</li>
-                    </ul>
-                </li>
-                <li><strong>Feeding Barriers:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 6.2. Barriers to better feeding?</li>
-                        <li><strong>Variable Name:</strong> feeding_barriers</li>
-                    </ul>
-                </li>
-                <li><strong>External Factors:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 6.3. External factors affecting feeding?</li>
-                        <li><strong>Variable Name:</strong> external_factors</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <hr class="border-gray-300 mb-8">
-
-        <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">9. Building the Performance and Outcomes Section</h2>
-            <p class="mb-2"><strong>Create Group:</strong></p>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Name:</strong> performance, <strong>Label:</strong> Section 7: Performance and Outcomes.</li>
-            </ul>
-            <p class="mb-2"><strong>Add Questions:</strong></p>
-            <ul class="list-disc list-inside mb-4 space-y-4">
-                <li><strong>KPI Monitored:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 7.1. What KPIs do you monitor?</li>
-                        <li><strong>Variable Name:</strong> kpi_monitored</li>
-                    </ul>
-                </li>
-                <li><strong>Growth Change:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 7.2. Changes in growth/health from feeding?</li>
-                        <li><strong>Variable Name:</strong> growth_change</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <hr class="border-gray-300 mb-8">
-
-        <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">10. Building the Future Improvement Section</h2>
-            <p class="mb-2"><strong>Create Group:</strong></p>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Name:</strong> future_improvements, <strong>Label:</strong> Section 8: Future Improvement.</li>
-            </ul>
-            <p class="mb-2"><strong>Add Questions:</strong></p>
-            <ul class="list-disc list-inside mb-4 space-y-4">
-                <li><strong>Desired Resources:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 8.1. Desired improvements in nutrition resources?</li>
-                        <li><strong>Variable Name:</strong> desired_resources</li>
-                    </ul>
-                </li>
-                <li><strong>Interested in Training:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> select_one yes_no</li>
-                        <li><strong>Label:</strong> 8.2. Interested in training/workshops?</li>
-                        <li><strong>Variable Name:</strong> interested_training</li>
-                        <li><strong>Choices:</strong> Yes, No</li>
-                    </ul>
-                </li>
-                <li><strong>Advice for New Farmers:</strong>
-                    <ul class="list-circle list-inside ml-6 space-y-1">
-                        <li><strong>Type:</strong> text</li>
-                        <li><strong>Label:</strong> 8.3. Advice for new farmers?</li>
-                        <li><strong>Variable Name:</strong> advice_new_farmers</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <hr class="border-gray-300 mb-8">
-
-        <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">11. Previewing and Testing</h2>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Preview Form:</strong> Click <em class="font-medium">Preview</em> in the form builder.</li>
-                <li>Test questions, skip logic (e.g., <em class="font-medium">why_stopped</em> appears only if <em class="font-medium">stopped_raising</em> = 'Yes'), and constraints.</li>
-                <li><strong>Fix Issues:</strong> Check for typos, incorrect logic (e.g., <em class="font-medium">starter_duration</em>, <em class="font-medium">finisher_start</em>), or missing choices.</li>
+                <li><strong>Pilot Test</strong>: Conduct a small-scale pilot with 5–10 respondents to identify issues before full deployment.</li>
+                <li><strong>Offline Considerations</strong>: Ensure enumerators sync KoboCollect data when internet is available to avoid data loss.</li>
+                <li><strong>Data Privacy</strong>: Inform respondents that their data (e.g., Name, Farm Location) will be handled confidentially. In KoboToolbox Settings, enable encryption if sensitive data is collected.</li>
+                <li><strong>Regular Backups</strong>: Download data periodically from the Data tab to prevent loss.</li>
             </ul>
             <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
-                <p class="text-gray-600"><strong>Tip:</strong> Test with sample responses to ensure skip logic and question flow work as expected.</p>
+                <p class="text-gray-600"><strong>Tip:</strong> For mobile data collection in rural areas, ensure enumerators have charged devices and are trained to sync data regularly to avoid delays.</p>
             </div>
         </section>
 
         <hr class="border-gray-300 mb-8">
 
         <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">12. Deploying the Survey</h2>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Finalize:</strong> Click <em class="font-medium">Deploy</em> to activate the form.</li>
-                <li><strong>Share:</strong> Copy the form link or download for offline use.</li>
-                <li><strong>Test Deployment:</strong> Submit test responses to verify data collection.</li>
-            </ul>
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">7. Advanced Features</h2>
+            <h3 class="text-xl font-medium text-teal-500 mb-2">Enhancing the Survey</h3>
+            <p class="mb-4">KoboToolbox offers advanced features to improve survey functionality and data quality. Below are features relevant to the Broiler Farmer Survey.</p>
+
+            <h3 class="text-xl font-medium text-teal-500 mb-2">Adding Calculations</h3>
+            <p class="mb-4">Use `calculate` questions to compute values, such as profit margins based on Feed Cost and Market Price.</p>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Add Calculate Question</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In the `market_economics` group, after Market Price, add a question.</li>
+                        <li><strong>Type</strong>: calculate</li>
+                        <li><strong>Label</strong>: Profit Margin Calculation</li>
+                        <li><strong>Variable Name</strong>: profit_margin</li>
+                        <li><strong>Calculation</strong>: `${market_price} - ${feed_cost} - ${transport_cost}`</li>
+                    </ul>
+                </li>
+                <li><strong>Display Result</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>Add a `note` question after the calculation.</li>
+                        <li><strong>Label</strong>: Your estimated profit margin per chicken is ${profit_margin} PGK.</li>
+                        <li><strong>Variable Name</strong>: profit_margin_note</li>
+                    </ul>
+                </li>
+                <li><strong>Test Calculation</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, enter sample values (e.g., `market_price` = 25.50, `feed_cost` = 10.00, `transport_cost` = 2.50).</li>
+                        <li>Verify the note displays "Your estimated profit margin per chicken is 13.00 PGK."</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3 class="text-xl font-medium text-teal-500 mb-2">Multilingual Support</h3>
+            <p class="mb-4">If surveying farmers who speak different languages, add translations.</p>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Enable Multilingual</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In the form builder, go to <em class="font-medium">Settings</em> > <em class="font-medium">Form Settings</em>.</li>
+                        <li>Add a language (e.g., Tok Pisin).</li>
+                    </ul>
+                </li>
+                <li><strong>Add Translations</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>For each question, click the gear icon and enter translations for Label, Hint, and Choices (e.g., "Name" in Tok Pisin: "Nem").</li>
+                        <li>Example for Primary Feed (3.1): "Commercial" → "Komisen", "Home-made" → "Haus-mek", "Mix" → "Miks".</li>
+                    </ul>
+                </li>
+                <li><strong>Test Translations</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, switch languages in the dropdown and verify all labels and choices display correctly.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3 class="text-xl font-medium text-teal-500 mb-2">Adding Media</h3>
+            <p class="mb-4">Include images or videos to clarify questions (e.g., pictures of feed types).</p>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li><strong>Upload Media</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In the form builder, go to <em class="font-medium">Settings</em> > <em class="font-medium">Media</em>.</li>
+                        <li>Upload an image (e.g., a photo of broiler starter crumbles for question 3.5).</li>
+                    </ul>
+                </li>
+                <li><strong>Link to Question</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>For Starter Used (3.5), click the gear icon, go to <em class="font-medium">Media</em>, and select the uploaded image.</li>
+                    </ul>
+                </li>
+                <li><strong>Test Media</strong>:
+                    <ul class="list-disc list-inside ml-6 space-y-2">
+                        <li>In Preview, ensure the image displays with the question on both web and mobile views.</li>
+                    </ul>
+                </li>
+            </ol>
             <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
-                <p class="text-gray-600"><strong>Tip:</strong> Verify offline functionality if collecting data in areas with limited internet.</p>
+                <p class="text-gray-600"><strong>Tip:</strong> Use calculations to provide immediate feedback to respondents (e.g., profit margin). For multilingual surveys, work with a native speaker to ensure accurate translations.</p>
             </div>
         </section>
 
         <hr class="border-gray-300 mb-8">
 
         <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">13. Best Practices for Survey Design</h2>
-            <h3 class="text-xl font-medium text-teal-500 mb-2">Design Principles</h3>
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">8. Conclusion</h2>
+            <p class="mb-4">This tutorial has guided you through creating a comprehensive Broiler Farmer Survey in KoboToolbox, covering project setup, question types, skip logic, constraints, testing, deployment, and advanced features. By following these steps, you can collect high-quality data to support agricultural research and improve broiler farming practices.</p>
+            <p class="mb-4">Key takeaways:</p>
             <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>Use simple, direct language (e.g., "How much does this feed cost?").</li>
-                <li>Group logically (e.g., demographics before feeding practices).</li>
-                <li>Minimize required fields to maintain respondent goodwill.</li>
+                <li>Use groups to organize questions logically (e.g., Demographics, Feeding Practices).</li>
+                <li>Apply skip logic and constraints to streamline the survey and ensure data validity.</li>
+                <li>Test thoroughly in Preview to catch errors before deployment.</li>
+                <li>Leverage advanced features like calculations and multilingual support to enhance functionality.</li>
+                <li>Monitor data collection and back up data regularly to maintain integrity.</li>
             </ul>
-
-            <h3 class="text-xl font-medium text-teal-500 mb-2">Advanced Tips</h3>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>Use <em class="font-medium">select_multiple</em> for questions with multiple answers (e.g., "What type of other feedstuff do you use?"); data is stored as space-separated values (e.g., <code class="bg-gray-200 px-1 rounded">purchased kitchen_waste</code>).</li>
-                <li>Add <em class="font-medium">note</em> for context (e.g., "Next, we’ll ask about nutritional knowledge").</li>
-                <li>Test multilingual labels if applicable.</li>
-            </ul>
-
-            <h3 class="text-xl font-medium text-teal-500 mb-2">Pitfalls to Avoid</h3>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>Inconsistent variable names (e.g., <em class="font-medium">feedcost</em> vs. <em class="font-medium">feed_cost</em>).</li>
-                <li>Complex skip logic confusing respondents.</li>
-                <li>Deploying without preview.</li>
-            </ul>
-        </section>
-
-        <hr class="border-gray-300 mb-8">
-
-        <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">14. Hands-On Activity</h2>
-            <h3 class="text-xl font-medium text-teal-500 mb-2">Objective</h3>
-            <p class="mb-4">Build the Feeding Practices section, incorporating skip logic and question types from the survey.</p>
-            <h3 class="text-xl font-medium text-teal-500 mb-2">Instructions</h3>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>Follow Section 4.4 to build the group.</li>
-                <li>Test skip logic for <em class="font-medium">starter_duration</em>, <em class="font-medium">finisher_start</em>, <em class="font-medium">different_brand</em>, <em class="font-medium">other_feed_types</em>, <em class="font-medium">weight_reason</em>, and <em class="font-medium">feed_loss_explain</em>.</li>
-                <li>Preview and verify question flow.</li>
-            </ul>
+            <p class="mb-4">For further assistance, refer to the <a href="https://support.kobotoolbox.org" class="text-blue-500 hover:underline">KoboToolbox Support Portal</a> or community forums.</p>
             <div class="bg-gray-50 border border-gray-300 rounded-md p-4 mt-4">
-                <p class="text-gray-600"><strong>Activity Goal:</strong> Create a functional survey section with accurate logic, ready for deployment.</p>
+                <p class="text-gray-600"><strong>Tip:</strong> Save a copy of your form as a template in KoboToolbox to reuse for similar surveys, saving time on future projects.</p>
             </div>
         </section>
 
-        <hr class="border-gray-300 mb-8">
-
-        <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">15. Resources for Further Learning</h2>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li>KoboToolbox Website: <a href="http://kobotoolbox.org" class="text-blue-500 hover:underline">kobotoolbox.org</a></li>
-                <li>Support Portal: <a href="http://support.kobotoolbox.org" class="text-blue-500 hover:underline">support.kobotoolbox.org</a></li>
-                <li>Community Forum: <a href="http://community.kobotoolbox.org" class="text-blue-500 hover:underline">community.kobotoolbox.org</a></li>
-            </ul>
-        </section>
-
-        <hr class="border-gray-300 mb-8">
-
-        <section class="mb-12 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-            <h2 class="text-3xl font-semibold text-blue-600 mb-4">16. Conclusion</h2>
-            <p class="mb-4">This tutorial provides a comprehensive guide to building a broiler farmer survey in KoboToolbox’s web interface, covering all questions from the Broiler Farmer Questionnaire with practical examples and advanced features.</p>
-        </section>
-
-        <footer class="text-center text-gray-600">
-            <p>© 2025 Shaun Narimbi. All rights reserved.</p>
+        <footer class="mt-12 text-center">
+            <p class="text-gray-600">Prepared by Shaun Narimbi | July 9, 2025</p>
+            <p class="text-gray-600">For inquiries, contact <a href="mailto:support@kobotoolbox.org" class="text-blue-500 hover:underline">support@kobotoolbox.org</a></p>
         </footer>
     </div>
 </body>
